@@ -1,0 +1,17 @@
+# depslib dependency file v1.0
+1677496221 source:d:\c-c++\academic\2nd_year_1st_semester\thinkfast\main.c
+	<stdio.h>
+	<stdlib.h>
+	<ctype.h>
+	<time.h>
+
+1677495814 source:d:\c-c++\academic\2nd_year_1st_semester\thinkfast\test.c
+
+1677495814 source:d:\c-c++\projects\thinkfast\test.c
+
+1677520905 source:d:\c-c++\projects\thinkfast\main.c
+	<stdio.h>
+	<stdlib.h>
+	<ctype.h>
+	<time.h>
+
