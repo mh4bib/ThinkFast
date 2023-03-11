@@ -15,3 +15,14 @@
 	<ctype.h>
 	<time.h>
 
+1678561242 source:d:\c-c++\projects\thinkfast\src\main.c
+	<stdio.h>
+	<stdlib.h>
+	<ctype.h>
+	<time.h>
+
+1678561785 source:d:\c-c++\projects\thinkfast\utils\mcq_reader.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+
