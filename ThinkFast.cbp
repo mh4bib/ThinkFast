@@ -31,10 +31,11 @@
 		<Compiler>
 			<Add option="-Wall" />
 		</Compiler>
+		<Unit filename=".gitignore" />
+		<Unit filename="Question_Bank/question_bank.txt" />
 		<Unit filename="main.c">
 			<Option compilerVar="CC" />
 		</Unit>
-		<Unit filename="question_bank.txt" />
 		<Extensions />
 	</Project>
 </CodeBlocks_project_file>

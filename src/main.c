@@ -23,7 +23,7 @@ int main() {
     char user_answer;
 
     // Opening file and read the questions and options
-    FILE *fp = fopen("question_bank.txt", "r");
+    FILE *fp = fopen("database\\question_bank\\primary\\question_bank.txt", "r");
     if (fp == NULL) {
         printf("Error opening file\n");
         return 1;

@@ -1,0 +1,2 @@
+This file is only for initializing folder in CodeBlocks.
+Delete it when there will be another file in this folder.

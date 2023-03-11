@@ -1,0 +1,62 @@
+quiz_game/
+│
+├── src/
+│   ├── main.c
+│   ├── user.c
+│   ├── question.c
+│   ├── game.c
+│   ├── scoreboard.c
+│   ├── category.c
+│   ├── settings.c
+│   ├── analytics.c
+│   ├── achievements.c
+│   └── sound.c
+│
+├── utils/
+│   ├── random_num.c
+│   ├── timer.c
+│   └── sound.c
+│
+├── include/
+│   ├── user.h
+│   ├── question.h
+│   ├── game.h
+│   ├── scoreboard.h
+│   ├── category.h
+│   ├── settings.h
+│   ├── analytics.h
+│   ├── achievements.h
+│   └── sound.h
+│
+├── database/
+│   ├── question_bank/
+|   |   ├── primary/
+|   |   |   ├── history.txt
+|   |   |   └── science.txt
+|   |   ├── secondary/
+|   |   |   ├── history.txt
+|   |   |   └── science.txt
+|   |   └── higher_secondary/
+|   |       ├── history.txt
+|   |       └── science.txt
+│   ├── achievements.txt
+│   └── users.txt
+│
+├── docs/
+│   ├── user.h
+│   ├── question.h
+│   └── sound.h
+|
+└── assets/
+    ├── images/
+    │   ├── question1.png
+    │   ├── question2.png
+    │   └── ...
+    ├── audio/
+    │   ├── correct.mp3
+    │   ├── incorrect.mp3
+    │   └── ...
+    └── fonts/
+        ├── Arial.ttf
+        ├── Times New Roman.ttf
+        └── ...
