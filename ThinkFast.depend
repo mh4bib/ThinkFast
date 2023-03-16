@@ -20,7 +20,7 @@
 	<stdlib.h>
 	<main_menu.h>
 
-1678981591 source:d:\c-c++\projects\thinkfast\utils\mcq_reader.c
+1678985085 source:d:\c-c++\projects\thinkfast\utils\mcq_reader.c
 	<stdio.h>
 	<stdlib.h>
 	<ctype.h>
@@ -42,7 +42,8 @@
 	<clear_screen.h>
 	<playgame_submenu.h>
 
-1678978511 source:d:\c-c++\projects\thinkfast\src\playgame_submenu.c
+1678986411 source:d:\c-c++\projects\thinkfast\src\playgame_submenu.c
+	<stdio.h>
 	<clear_screen.h>
 	<main_menu.h>
 

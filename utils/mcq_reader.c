@@ -20,8 +20,8 @@ struct MCQ_QUESTIONS
     struct MCQ *mcq;
 };
 
-//read mcq from file
-struct MCQ_QUESTIONS *read_file(char *filename)
+// read mcq from file
+struct MCQ_QUESTIONS *read_mcq(char *filename)
 {
     FILE *fp = fopen(filename, "r");
     if (fp == NULL)
@@ -51,13 +51,12 @@ struct MCQ_QUESTIONS *read_file(char *filename)
     return mcq_questions;
 }
 
-//store mcq and display one by one
+// store mcq and display one by one
 void display_mcq(char *filename)
 {
     struct MCQ_QUESTIONS *mcq_questions = NULL;
-    char user_answer;
 
-    mcq_questions = read_file(filename);
+    mcq_questions = read_mcq(filename);
 
     if (mcq_questions == NULL)
     {
@@ -66,6 +65,8 @@ void display_mcq(char *filename)
 
     int total_questions = mcq_questions->total_question;
     struct MCQ *mcq = mcq_questions->mcq;
+    char user_answer[total_questions];
+    int score=0;
 
     initialize_random();
 
@@ -75,26 +76,29 @@ void display_mcq(char *filename)
         // Generate a random number between 1 and total_questions
         int random_question = get_random_number(total_questions);
 
-        //Progress Bar
-        printf("%d/%d [", i+1, total_questions);
-        for(int k=0; k<i+1; k++) printf("# ");
-        for(int k=i+1; k<total_questions+1; k++) printf(". ");
+        // Progress Bar
+        printf("%d/%d [", i + 1, total_questions);
+        for (int k = 0; k < i + 1; k++)
+            printf("# ");
+        for (int k = i + 1; k < total_questions + 1; k++)
+            printf(". ");
         printf("]\n\n");
 
         // Displaying question and options
-        printf("%d. %s", i + 1, mcq[random_question].text);
+        printf("%s", mcq[random_question].text);
         for (int j = 0; j < 4; j++)
         {
             printf("%s", mcq[random_question].options[j]);
         }
 
         // Taking user's choice
-        scanf("\n%c", &user_answer);
-        user_answer = toupper(user_answer);
+        scanf("\n%c", &user_answer[random_question]);
+        user_answer[random_question] = toupper(user_answer[random_question]);
 
         // Checking user's answer
-        if (user_answer == mcq[random_question].correct_option)
+        if (user_answer[random_question] == mcq[random_question].correct_option)
         {
+            score++;
             printf("Correct!\n\n");
         }
         else
@@ -103,5 +107,28 @@ void display_mcq(char *filename)
         }
         Sleep(500);
         clear_screen();
+    }
+
+    // displaying answer sheet
+    printf("==============================================\n");
+    printf("                     RESULT\n");
+    printf("==============================================\n");
+    printf("            You scored %d out of %d\n", score, total_questions);
+    printf("==============================================\n");
+    for (int i = 0; i < total_questions; i++)
+    {
+        printf("Q%d. %s", i+1, mcq[i].text);
+        if(mcq[i].correct_option==user_answer[i])
+        {
+            char *option = strtok(mcq[i].options[user_answer[i]-65], "\n");
+            printf("Your answer: %s (Correct)\n",option);
+        }
+        else
+        {
+            char *option = strtok(mcq[i].options[user_answer[i]-65], "\n");
+            printf("Your answer: %s (Incorrect)\n",option);
+            printf("Correct answer: %s",mcq[i].options[mcq[i].correct_option-65]);
+        }
+        printf("\n");
     }
 }

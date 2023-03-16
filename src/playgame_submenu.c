@@ -31,7 +31,7 @@ void playgame_submenu()
     {
     case 1:
         clear_screen();
-        display_mcq("D:\\C-C++\\Projects\\ThinkFast\\database\\question_bank\\primary\\question_bank.txt");
+        display_mcq("D:\\C-C++\\Projects\\ThinkFast\\database\\question_bank\\primary\\primary_easy_10.txt");
         break;
     case 2:
         // code to add questions
