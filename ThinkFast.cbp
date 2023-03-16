@@ -32,8 +32,32 @@
 			<Add option="-Wall" />
 		</Compiler>
 		<Unit filename=".gitignore" />
-		<Unit filename="Question_Bank/question_bank.txt" />
-		<Unit filename="main.c">
+		<Unit filename="assets/folder_init.txt" />
+		<Unit filename="database/question_bank/higher_secondary/folder_init.txt" />
+		<Unit filename="database/question_bank/primary/question_bank.txt" />
+		<Unit filename="database/question_bank/secondary/folder_init.txt" />
+		<Unit filename="include/clear_screen.h" />
+		<Unit filename="include/main_menu.h" />
+		<Unit filename="include/mcq_reader.h" />
+		<Unit filename="include/playgame_submenu.h" />
+		<Unit filename="include/random_number.h" />
+		<Unit filename="others/file_structure.txt" />
+		<Unit filename="src/main.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="src/main_menu.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="src/playgame_submenu.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="utils/clear_screen.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="utils/mcq_reader.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="utils/random_number.c">
 			<Option compilerVar="CC" />
 		</Unit>
 		<Extensions />

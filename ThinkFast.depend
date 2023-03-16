@@ -15,21 +15,34 @@
 	<ctype.h>
 	<time.h>
 
-1678565718 source:d:\c-c++\projects\thinkfast\src\main.c
+1678978796 source:d:\c-c++\projects\thinkfast\src\main.c
+	<stdio.h>
+	<stdlib.h>
+	<main_menu.h>
+
+1678981591 source:d:\c-c++\projects\thinkfast\utils\mcq_reader.c
 	<stdio.h>
 	<stdlib.h>
 	<ctype.h>
 	<time.h>
+	<windows.h>
 	<mcq_reader.h>
 	<random_number.h>
+	<clear_screen.h>
 
-1678561785 source:d:\c-c++\projects\thinkfast\utils\mcq_reader.c
-	<stdio.h>
-	<stdlib.h>
-	<string.h>
-
-1678565741 source:d:\c-c++\projects\thinkfast\utils\random_number.c
+1678566516 source:d:\c-c++\projects\thinkfast\utils\random_number.c
 	<stdio.h>
 	<stdlib.h>
 	<time.h>
+
+1678974152 source:d:\c-c++\projects\thinkfast\utils\clear_screen.c
+
+1678984638 source:d:\c-c++\projects\thinkfast\src\main_menu.c
+	<stdio.h>
+	<clear_screen.h>
+	<playgame_submenu.h>
+
+1678978511 source:d:\c-c++\projects\thinkfast\src\playgame_submenu.c
+	<clear_screen.h>
+	<main_menu.h>
 

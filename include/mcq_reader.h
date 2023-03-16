@@ -1,7 +1,7 @@
 #ifndef MCQ_READER_H
 #define MCQ_READER_H
 
-struct MCQ
+/* struct MCQ
 {
     char text[100];
     char options[4][50];
@@ -14,7 +14,9 @@ struct MCQ_QUESTIONS
     struct MCQ *mcq;
 };
 
-struct MCQ_QUESTIONS *read_mcq(char *filename);
+struct MCQ_QUESTIONS *read_mcq(char *filename); */
+
+void display_mcq(char *filename);
 
 #endif // MCQ_READER_H
 
