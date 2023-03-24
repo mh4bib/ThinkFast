@@ -17,24 +17,24 @@ struct MCQ
 struct MCQ_QUESTIONS
 {
     int total_question;
-    struct MCQ *mcq;
+    struct MCQ* mcq;
 };
 
 // read mcq from file
-struct MCQ_QUESTIONS *read_mcq(char *filename)
+struct MCQ_QUESTIONS* read_mcq(char* filename)
 {
-    FILE *fp = fopen(filename, "r");
+    FILE* fp = fopen(filename, "r");
     if (fp == NULL)
     {
         printf("Error opening file %s\n", filename);
         return NULL;
     }
 
-    struct MCQ_QUESTIONS *mcq_questions;
+    struct MCQ_QUESTIONS* mcq_questions;
     mcq_questions = malloc(sizeof(struct MCQ_QUESTIONS));
     mcq_questions->total_question = 0;
     int count = 1;
-    mcq_questions->mcq = (struct MCQ *)malloc(count * sizeof(struct MCQ));
+    mcq_questions->mcq = (struct MCQ*)malloc(count * sizeof(struct MCQ));
 
     while (fgets(mcq_questions->mcq[mcq_questions->total_question].text, 100, fp))
     {
@@ -52,9 +52,9 @@ struct MCQ_QUESTIONS *read_mcq(char *filename)
 }
 
 // store mcq and display one by one
-void display_mcq(char *filename)
+void display_mcq(char* filename)
 {
-    struct MCQ_QUESTIONS *mcq_questions = NULL;
+    struct MCQ_QUESTIONS* mcq_questions = NULL;
 
     mcq_questions = read_mcq(filename);
 
@@ -64,9 +64,9 @@ void display_mcq(char *filename)
     }
 
     int total_questions = mcq_questions->total_question;
-    struct MCQ *mcq = mcq_questions->mcq;
+    struct MCQ* mcq = mcq_questions->mcq;
     char user_answer[total_questions];
-    int score=0;
+    int score = 0;
 
     initialize_random();
 
@@ -95,17 +95,11 @@ void display_mcq(char *filename)
         scanf("\n%c", &user_answer[random_question]);
         user_answer[random_question] = toupper(user_answer[random_question]);
 
-        // Checking user's answer
+        // updating score
         if (user_answer[random_question] == mcq[random_question].correct_option)
-        {
             score++;
-            printf("Correct!\n\n");
-        }
-        else
-        {
-            printf("Incorrect. The correct answer is %c.\n\n", mcq[random_question].correct_option);
-        }
-        Sleep(500);
+
+        Sleep(300);
         clear_screen();
     }
 
@@ -117,17 +111,17 @@ void display_mcq(char *filename)
     printf("==============================================\n");
     for (int i = 0; i < total_questions; i++)
     {
-        printf("Q%d. %s", i+1, mcq[i].text);
-        if(mcq[i].correct_option==user_answer[i])
+        printf("Q%d. %s", i + 1, mcq[i].text);
+        if (mcq[i].correct_option == user_answer[i])
         {
-            char *option = strtok(mcq[i].options[user_answer[i]-65], "\n");
-            printf("Your answer: %s (Correct)\n",option);
+            char* option = strtok(mcq[i].options[user_answer[i] - 65], "\n");
+            printf("Your answer: \x1b[32m%s\x1b[0m (Correct)\n", option);
         }
         else
         {
-            char *option = strtok(mcq[i].options[user_answer[i]-65], "\n");
-            printf("Your answer: %s (Incorrect)\n",option);
-            printf("Correct answer: %s",mcq[i].options[mcq[i].correct_option-65]);
+            char* option = strtok(mcq[i].options[user_answer[i] - 65], "\n");
+            printf("Your answer: \x1b[31m%s\x1b[0m (Incorrect)\n", option);
+            printf("Correct answer: \x1b[33m%s\x1b[0m", mcq[i].options[mcq[i].correct_option - 65]);
         }
         printf("\n");
     }

@@ -34,14 +34,21 @@
 		<Unit filename=".gitignore" />
 		<Unit filename="assets/folder_init.txt" />
 		<Unit filename="database/question_bank/higher_secondary/folder_init.txt" />
+		<Unit filename="database/question_bank/primary/primary_easy_10.txt" />
 		<Unit filename="database/question_bank/primary/question_bank.txt" />
 		<Unit filename="database/question_bank/secondary/folder_init.txt" />
+		<Unit filename="database/user_info.txt" />
 		<Unit filename="include/clear_screen.h" />
+		<Unit filename="include/get_user_info.h" />
+		<Unit filename="include/login.h" />
 		<Unit filename="include/main_menu.h" />
 		<Unit filename="include/mcq_reader.h" />
 		<Unit filename="include/playgame_submenu.h" />
 		<Unit filename="include/random_number.h" />
 		<Unit filename="others/file_structure.txt" />
+		<Unit filename="src/login.c">
+			<Option compilerVar="CC" />
+		</Unit>
 		<Unit filename="src/main.c">
 			<Option compilerVar="CC" />
 		</Unit>
@@ -52,6 +59,9 @@
 			<Option compilerVar="CC" />
 		</Unit>
 		<Unit filename="utils/clear_screen.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="utils/get_user_info.c">
 			<Option compilerVar="CC" />
 		</Unit>
 		<Unit filename="utils/mcq_reader.c">

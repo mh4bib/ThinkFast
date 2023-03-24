@@ -15,12 +15,15 @@
 	<ctype.h>
 	<time.h>
 
-1678978796 source:d:\c-c++\projects\thinkfast\src\main.c
+1679656439 source:d:\c-c++\projects\thinkfast\src\main.c
 	<stdio.h>
 	<stdlib.h>
+	<windows.h>
+	<clear_screen.h>
 	<main_menu.h>
+	<login.h>
 
-1678985085 source:d:\c-c++\projects\thinkfast\utils\mcq_reader.c
+1679652724 source:d:\c-c++\projects\thinkfast\utils\mcq_reader.c
 	<stdio.h>
 	<stdlib.h>
 	<ctype.h>
@@ -37,13 +40,22 @@
 
 1678974152 source:d:\c-c++\projects\thinkfast\utils\clear_screen.c
 
-1678984638 source:d:\c-c++\projects\thinkfast\src\main_menu.c
+1679634529 source:d:\c-c++\projects\thinkfast\src\main_menu.c
 	<stdio.h>
 	<clear_screen.h>
 	<playgame_submenu.h>
 
-1678986411 source:d:\c-c++\projects\thinkfast\src\playgame_submenu.c
+1679202850 source:d:\c-c++\projects\thinkfast\src\playgame_submenu.c
 	<stdio.h>
 	<clear_screen.h>
 	<main_menu.h>
+
+1679655592 source:d:\c-c++\projects\thinkfast\utils\get_user_info.c
+	<stdio.h>
+	<stdlib.h>
+	<ctype.h>
+
+1679656371 source:d:\c-c++\projects\thinkfast\src\login.c
+	<stdio.h>
+	<get_user_info.h>
 
