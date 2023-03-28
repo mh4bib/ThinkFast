@@ -45,6 +45,7 @@
 		<Unit filename="include/mcq_reader.h" />
 		<Unit filename="include/playgame_submenu.h" />
 		<Unit filename="include/random_number.h" />
+		<Unit filename="include/register.h" />
 		<Unit filename="others/file_structure.txt" />
 		<Unit filename="src/login.c">
 			<Option compilerVar="CC" />
@@ -56,6 +57,9 @@
 			<Option compilerVar="CC" />
 		</Unit>
 		<Unit filename="src/playgame_submenu.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="src/register.c">
 			<Option compilerVar="CC" />
 		</Unit>
 		<Unit filename="utils/clear_screen.c">

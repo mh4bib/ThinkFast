@@ -18,3 +18,8 @@ mahiuddin habib
 secret-password
 50
 1
+mail@coolmail.com
+habib
+1234
+0
+21

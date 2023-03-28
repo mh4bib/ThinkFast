@@ -1,6 +1,6 @@
 #ifndef LOGIN
 #define LOGIN
 
-void login();
+int login();
 
 #endif // LOGIN

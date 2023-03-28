@@ -15,13 +15,14 @@
 	<ctype.h>
 	<time.h>
 
-1679656439 source:d:\c-c++\projects\thinkfast\src\main.c
+1679807893 source:d:\c-c++\projects\thinkfast\src\main.c
 	<stdio.h>
 	<stdlib.h>
 	<windows.h>
 	<clear_screen.h>
 	<main_menu.h>
 	<login.h>
+	<register.h>
 
 1679652724 source:d:\c-c++\projects\thinkfast\utils\mcq_reader.c
 	<stdio.h>
@@ -55,7 +56,12 @@
 	<stdlib.h>
 	<ctype.h>
 
-1679656371 source:d:\c-c++\projects\thinkfast\src\login.c
+1679806855 source:d:\c-c++\projects\thinkfast\src\login.c
 	<stdio.h>
+	<get_user_info.h>
+
+1679807748 source:d:\c-c++\projects\thinkfast\src\register.c
+	<stdio.h>
+	<stdlib.h>
 	<get_user_info.h>
 

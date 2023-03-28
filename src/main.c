@@ -4,6 +4,7 @@
 #include <clear_screen.h>
 #include <main_menu.h>
 #include<login.h>
+#include<register.h>
 
 int main()
 {
@@ -16,7 +17,10 @@ int main()
 
   Sleep(1000);
   clear_screen();
-  main_menu();
+  // main_menu();
 
+  login();
+
+  // registr();
   return 0;
 }
