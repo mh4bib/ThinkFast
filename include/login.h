@@ -1,6 +1,6 @@
 #ifndef LOGIN
 #define LOGIN
 
-int login();
+int login(char **Email, int **Level);
 
 #endif // LOGIN

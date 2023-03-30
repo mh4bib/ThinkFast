@@ -41,11 +41,13 @@
 		<Unit filename="include/clear_screen.h" />
 		<Unit filename="include/get_user_info.h" />
 		<Unit filename="include/login.h" />
+		<Unit filename="include/login_prompt.h" />
 		<Unit filename="include/main_menu.h" />
 		<Unit filename="include/mcq_reader.h" />
 		<Unit filename="include/playgame_submenu.h" />
 		<Unit filename="include/random_number.h" />
 		<Unit filename="include/register.h" />
+		<Unit filename="include/update_level.h" />
 		<Unit filename="others/file_structure.txt" />
 		<Unit filename="src/login.c">
 			<Option compilerVar="CC" />
@@ -68,10 +70,16 @@
 		<Unit filename="utils/get_user_info.c">
 			<Option compilerVar="CC" />
 		</Unit>
+		<Unit filename="utils/login_prompt.c">
+			<Option compilerVar="CC" />
+		</Unit>
 		<Unit filename="utils/mcq_reader.c">
 			<Option compilerVar="CC" />
 		</Unit>
 		<Unit filename="utils/random_number.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="utils/update_level.c">
 			<Option compilerVar="CC" />
 		</Unit>
 		<Extensions />

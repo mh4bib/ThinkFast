@@ -2,51 +2,24 @@
 #include <clear_screen.h>
 #include <main_menu.h>
 
-void playgame_submenu()
+void playgame_submenu(char** mail, int** level)
 {
-    int choice;
-    do
+    if (*mail == NULL)
     {
-    printf("====================================\n");
-    printf("|           Select Level           |\n");
-    printf("====================================\n");
-    printf("| 1. Primary                       |\n");
-    printf("| 2. Secondary                     |\n");
-    printf("| 3. Higher Secondary              |\n");
-    printf("| 4. go back to home               |\n");
-    printf("====================================\n");
-    printf("| Enter your choice (1-4):         |\n");
-    printf("====================================\n");
-    // fflush(stdout);  // make sure the prompt is displayed before input is read
-    if(scanf("%d", &choice)!=1)
-        {
-            clear_screen();
-            printf("Invalid choice. Please enter a number between 1 and 4.\n");
-            // while (getchar() != '\n');  // clear input buffer
-            // choice = -1;  // set invalid choice to continue loop
-            fflush(stdin);
-            continue;
-        }
-    switch (choice)
+        printf("You're not logged in.Please login/register first\n");
+        login_prompt(mail, level);
+    }
+
+    switch (**level)
     {
     case 1:
         clear_screen();
-        display_mcq("D:\\C-C++\\Projects\\ThinkFast\\database\\question_bank\\primary\\primary_easy_10.txt");
+        display_mcq("D:\\C-C++\\Projects\\ThinkFast\\database\\question_bank\\primary\\primary_easy_10.txt", *mail);
         break;
-    case 2:
-        // code to add questions
-        break;
-    case 3:
-        // code to display high scores
-        break;
-    case 4:
+
+    default:
         clear_screen();
         main_menu();
         break;
-    default:
-        clear_screen();
-        printf("Invalid choice. Please enter a number between 1 and 4.\n");
-        break;
     }
-    } while (choice < 1 || choice > 4);
 }

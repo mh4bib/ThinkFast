@@ -5,6 +5,7 @@
 #include <main_menu.h>
 #include<login.h>
 #include<register.h>
+#include<update_level.h>
 
 int main()
 {
@@ -17,10 +18,11 @@ int main()
 
   Sleep(1000);
   clear_screen();
-  // main_menu();
+  main_menu();
+  // login();
+  //registr();
 
-  login();
+  //update_level("mymail@nomail.com");
 
-  // registr();
   return 0;
 }

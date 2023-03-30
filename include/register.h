@@ -1,6 +1,6 @@
 #ifndef REGISTER
 #define REGISTER
 
-int registr();
+void registr(char** Email, int** Level);
 
 #endif // REGISTER

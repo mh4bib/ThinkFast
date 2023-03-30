@@ -35,12 +35,15 @@ struct USER_INFO* get_users()
 
     while (fgets(user_info->user[user_info->total_user].email, 100, fp))
     {
+        user_info->user[user_info->total_user].email[strcspn(user_info->user[user_info->total_user].email, "\n")] = '\0';
         count++;
         user_info->user = realloc(user_info->user, count * sizeof(struct USER));
 
 
         fgets(user_info->user[user_info->total_user].name, 100, fp);
+        user_info->user[user_info->total_user].name[strcspn(user_info->user[user_info->total_user].name, "\n")] = '\0';
         fgets(user_info->user[user_info->total_user].password, 100, fp);
+        user_info->user[user_info->total_user].password[strcspn(user_info->user[user_info->total_user].password, "\n")] = '\0';
         fscanf(fp, "%d\n", &user_info->user[user_info->total_user].highest_score);
         fscanf(fp, "%d\n", &user_info->user[user_info->total_user].level);
         user_info->total_user++;

@@ -16,7 +16,7 @@ struct MCQ_QUESTIONS
 
 struct MCQ_QUESTIONS *read_mcq(char *filename); */
 
-void display_mcq(char *filename);
+void display_mcq(char* filename, char *mail);
 
 #endif // MCQ_READER_H
 

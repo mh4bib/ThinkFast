@@ -1,7 +1,7 @@
 #include<stdio.h>
 #include<get_user_info.h>
 
-int login() {
+int login(char **Email, int **Level) {
   struct USER_INFO* user_info = NULL;
   char mail[100], pass[100];
   int is_valid = 0, i;
@@ -18,8 +18,8 @@ int login() {
 
   for (i = 0; i < total_users; i++)
   {
-    char* email = strtok(user[i].email, "\n");
-    if (strcmp(email, mail) == 0)
+    // char* email = strtok(user[i].email, "\n");
+    if (strcmp(user[i].email, mail) == 0)
     {
       is_valid = 1;
       break;
@@ -34,13 +34,16 @@ int login() {
 
   printf("Enter Password: ");
   scanf("%s", &pass);
-  char* password = strtok(user[i].password, "\n");
-  if (strcmp(password, pass) != 0)
+  // char* password = strtok(user[i].password, "\n");
+  if (strcmp(user[i].password, pass) != 0)
   {
     printf("Incorrect password\n");
     return 1;
   }
-  printf("YOU ARE LOGGED IN\n");
 
+  *Email = &user[i].email;
+  *Level = &user[i].level;
+  clear_screen();
+  main_menu();
   return 0;
 }

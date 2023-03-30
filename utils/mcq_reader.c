@@ -52,7 +52,7 @@ struct MCQ_QUESTIONS* read_mcq(char* filename)
 }
 
 // store mcq and display one by one
-void display_mcq(char* filename)
+void display_mcq(char* filename, char *mail)
 {
     struct MCQ_QUESTIONS* mcq_questions = NULL;
 
@@ -125,4 +125,10 @@ void display_mcq(char* filename)
         }
         printf("\n");
     }
+
+    update_level(mail);
+    printf("Press any key to continue...\n");
+    getch();
+    clear_screen();
+    main_menu();
 }

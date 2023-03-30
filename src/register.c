@@ -1,9 +1,11 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include<get_user_info.h>
+#include<main_menu.h>
+#include<clear_screen.h>
 
-int registr() {
-    int choice;
+void registr(char** Email, int** Level) {
+    int choice, i;
     char mail[100];
     char name[100];
     char password[100];
@@ -20,20 +22,21 @@ int registr() {
     printf("Enter email: ");
     scanf("%s", &mail);
 
-    for (int i = 0; i < total_users; i++)
+    for (i = 0; i < total_users; i++)
     {
-        char* email = strtok(user[i].email, "\n");
-        if (strcmp(email, mail) == 0)
+        // char* email = strtok(user[i].email, "\n");
+        if (strcmp(user[i].email, mail) == 0)
         {
-            printf("You are already registered! Please login.\n");
+            printf("You are already registered! Please login");
             return 1;
         }
     }
 
+    while (getchar() != '\n');
     printf("Enter name: ");
-    scanf("%s", &name);
+    fgets(name, sizeof(name), stdin);
     printf("Enter password: ");
-    scanf("%s", &password);
+    fgets(password, sizeof(password), stdin);
 
     clear_screen();
     do
@@ -82,7 +85,11 @@ int registr() {
         printf("Error opening file\n");
         return NULL;
     }
-    fprintf(fp, "\n%s\n%s\n%s\n%d\n%d", mail, name, password, highest_score, level);
-
-    return 0;
+    fprintf(fp, "%s\n%s%s%d\n%d\n", mail, name, password, highest_score, level);
+    // Flush file buffer to write data immediately
+    fflush(fp);
+    *Email = &mail;
+    *Level = &level;
+    clear_screen();
+    main_menu();
 }
