@@ -2,7 +2,7 @@
 #include<stdlib.h>
 #include <time.h>
 
-int visited[1001];
+int visited[101];
 
 /* int is_duplicate(int num)
 {
@@ -14,6 +14,9 @@ int visited[1001];
 
 
 void initialize_random() {
+    for (int i = 0; i < 101; i++)
+        visited[i]=0;
+    
     srand(time(NULL));
 }
 

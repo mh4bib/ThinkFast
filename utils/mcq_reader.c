@@ -52,7 +52,7 @@ struct MCQ_QUESTIONS* read_mcq(char* filename)
 }
 
 // store mcq and display one by one
-void display_mcq(char* filename, char *mail)
+void display_mcq(char* filename, char* mail, int** Level)
 {
     struct MCQ_QUESTIONS* mcq_questions = NULL;
 
@@ -126,9 +126,14 @@ void display_mcq(char* filename, char *mail)
         printf("\n");
     }
 
-    update_level(mail);
+    if (score > 6)
+        update_level(mail, Level);
+    else
+        printf("\x1b[107m\x1b[92mYou have to play this round again as you scored less than 7\x1b[0m\n");
+
     printf("Press any key to continue...\n");
     getch();
     clear_screen();
+    while (getchar() != '\n');
     main_menu();
 }

@@ -1,7 +1,7 @@
 #ifndef RANDOM_NUMBER_H
 #define RANDOM_NUMBER_H
 
-int visited[1001];
+int visited[101];
 int is_duplicate(int num)
 {
     if (!visited[num])

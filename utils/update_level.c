@@ -1,7 +1,7 @@
 #include<stdio.h>
 #include<get_user_info.h>
 
-void update_level(char mail[])
+void update_level(char mail[], int** Level)
 {
     int i;
     struct USER_INFO* user_info = NULL;
@@ -19,6 +19,9 @@ void update_level(char mail[])
             break;
     }
     (user + i)->level += 1;
+
+    // update locally
+    **Level += 1;
 
     FILE* fp = fopen("D:\\C-C++\\Projects\\ThinkFast\\database\\user_info.txt", "w");
     if (fp == NULL)

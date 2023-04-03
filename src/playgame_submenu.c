@@ -10,7 +10,10 @@ void playgame_submenu(char** mail, int** level)
         login_prompt(mail, level);
     }
 
-    switch (**level)
+    char filename[100];
+    sprintf(filename, "D:\\C-C++\\Projects\\ThinkFast\\database\\question_bank\\primary\\primary_level_%d.txt", **level);
+    display_mcq(filename, *mail, level);
+    /* switch (**level)
     {
     case 1:
         clear_screen();
@@ -21,5 +24,5 @@ void playgame_submenu(char** mail, int** level)
         clear_screen();
         main_menu();
         break;
-    }
+    } */
 }
