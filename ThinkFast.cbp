@@ -33,10 +33,15 @@
 		</Compiler>
 		<Unit filename=".gitignore" />
 		<Unit filename="assets/folder_init.txt" />
-		<Unit filename="database/question_bank/higher_secondary/folder_init.txt" />
-		<Unit filename="database/question_bank/primary/primary_easy_10.txt" />
-		<Unit filename="database/question_bank/primary/question_bank.txt" />
-		<Unit filename="database/question_bank/secondary/folder_init.txt" />
+		<Unit filename="database/question_bank/higher_secondary/higher_secondary_level_21.txt" />
+		<Unit filename="database/question_bank/higher_secondary/higher_secondary_level_22.txt" />
+		<Unit filename="database/question_bank/primary/primary_level_1.txt" />
+		<Unit filename="database/question_bank/primary/primary_level_2.txt" />
+		<Unit filename="database/question_bank/primary/primary_level_3.txt" />
+		<Unit filename="database/question_bank/primary/primary_level_4.txt" />
+		<Unit filename="database/question_bank/primary/primary_level_5.txt" />
+		<Unit filename="database/question_bank/secondary/secondary_level_11.txt" />
+		<Unit filename="database/question_bank/secondary/secondary_level_12.txt" />
 		<Unit filename="database/user_info.txt" />
 		<Unit filename="include/clear_screen.h" />
 		<Unit filename="include/get_user_info.h" />

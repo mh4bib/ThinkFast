@@ -99,7 +99,7 @@ void display_mcq(char* filename, char* mail, int** Level)
         if (user_answer[random_question] == mcq[random_question].correct_option)
             score++;
 
-        Sleep(300);
+        //Sleep(300);
         clear_screen();
     }
 
@@ -129,11 +129,10 @@ void display_mcq(char* filename, char* mail, int** Level)
     if (score > 6)
         update_level(mail, Level);
     else
-        printf("\x1b[107m\x1b[92mYou have to play this round again as you scored less than 7\x1b[0m\n");
+        printf("\x1b[91mYou have to play this round again as you scored less than 7\x1b[0m\n");
 
     printf("Press any key to continue...\n");
     getch();
     clear_screen();
-    while (getchar() != '\n');
     main_menu();
 }

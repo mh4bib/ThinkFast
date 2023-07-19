@@ -11,18 +11,13 @@ void playgame_submenu(char** mail, int** level)
     }
 
     char filename[100];
-    sprintf(filename, "D:\\C-C++\\Projects\\ThinkFast\\database\\question_bank\\primary\\primary_level_%d.txt", **level);
-    display_mcq(filename, *mail, level);
-    /* switch (**level)
-    {
-    case 1:
-        clear_screen();
-        display_mcq("D:\\C-C++\\Projects\\ThinkFast\\database\\question_bank\\primary\\primary_easy_10.txt", *mail);
-        break;
+    if (**level > 20)
+        sprintf(filename, "database\\question_bank\\higher_secondary\\higher_secondary_level_%d.txt", **level);
+    else if (**level > 10)
+        sprintf(filename, "database\\question_bank\\secondary\\secondary_level_%d.txt", **level);
+    else
+        sprintf(filename, "database\\question_bank\\primary\\primary_level_%d.txt", **level);
 
-    default:
-        clear_screen();
-        main_menu();
-        break;
-    } */
+    display_mcq(filename, *mail, level);
+
 }

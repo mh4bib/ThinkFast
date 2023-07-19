@@ -1,0 +1,48 @@
+Who is known as the father of modern physics?
+A. Isaac Newton
+B. Albert Einstein
+C. Galileo Galilei
+D. Stephen Hawking
+B
+What is the derivative of x^3 with respect to x?
+A. 3x^2
+B. 2x^3
+C. 4x^3
+D. x^4
+A
+What is the integral of 2x dx?
+A. x^2 + C
+B. x^3 + C
+C. 2x^2 + C
+D. 2x^3 + C
+A
+What is the sum of the interior angles of a hexagon?
+A. 180 degrees
+B. 360 degrees
+C. 540 degrees
+D. 720 degrees
+C
+What is the opposite of hot?
+A. Warm
+B. Cold
+C. Cool
+D. Mild
+B
+Which of the following is the odd one out?
+A. Square
+B. Circle
+C. Triangle
+D. Rectangle
+B
+What is the pH of a neutral solution?
+A. 7
+B. 8
+C. 6
+D. 5
+A
+What is the chemical formula for table salt?
+A. NaHCO3
+B. NaCl
+C. Na2CO3
+D. NaOH
+B

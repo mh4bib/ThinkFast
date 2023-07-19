@@ -19,10 +19,6 @@ int main()
   Sleep(1000);
   clear_screen();
   main_menu();
-  // login();
-  //registr();
-
-  //update_level("mymail@nomail.com");
 
   return 0;
 }
