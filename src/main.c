@@ -16,7 +16,8 @@ int main()
   printf("   _| |_   | | | | | | | | | | | |`\\ \\ _| |_  // | |,`'.'.| |,  \n");
   printf("  |_____| [___]|__[___[___||__[__|  \\_|_____| \\\'-;__[\\__) \\__/  \n");
 
-  Sleep(1000);
+  printf("\n\nPress any key to continue...\n");
+  getch();
   clear_screen();
   main_menu();
 

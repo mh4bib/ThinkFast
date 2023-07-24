@@ -15,7 +15,7 @@
 	<ctype.h>
 	<time.h>
 
-1681109671 source:d:\c-c++\projects\thinkfast\src\main.c
+1689776679 source:d:\c-c++\projects\thinkfast\src\main.c
 	<stdio.h>
 	<stdlib.h>
 	<windows.h>
@@ -64,7 +64,7 @@
 	<stdio.h>
 	<get_user_info.h>
 
-1680173447 source:d:\c-c++\projects\thinkfast\src\register.c
+1689777164 source:d:\c-c++\projects\thinkfast\src\register.c
 	<stdio.h>
 	<stdlib.h>
 	<get_user_info.h>

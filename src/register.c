@@ -38,18 +38,17 @@ void registr(char** Email, int** Level) {
     printf("Enter password: ");
     fgets(password, sizeof(password), stdin);
 
-    clear_screen();
     do
     {
-        printf("====================================\n");
-        printf("|           Select Level           |\n");
-        printf("====================================\n");
-        printf("| 1. Primary                       |\n");
-        printf("| 2. Secondary                     |\n");
-        printf("| 3. Higher Secondary              |\n");
-        printf("====================================\n");
-        printf("| Enter your choice (1-3):         |\n");
-        printf("====================================\n");
+        //printf("====================================\n");
+        printf("\nSelect Level\n");
+        //printf("====================================\n");
+        printf(" 1. Primary\n");
+        printf(" 2. Secondary\n");
+        printf(" 3. Higher Secondary\n\n");
+        //printf("====================================\n");
+        printf(" Enter your choice (1-3): ");
+        //printf("====================================\n");
         // fflush(stdout);  // make sure the prompt is displayed before input is read
         if (scanf("%d", &choice) != 1)
         {

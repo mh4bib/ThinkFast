@@ -1,22 +1,22 @@
 mail@email.com
 mahiuddin habib
-secret-password
-50
-1
+nopass
+0
+2
 mail@gmail.com
 mahiuddin habib
 secret-password
-50
+0
 1
 mail@hotmail.com
 mahiuddin habib
 secret-password
-50
+0
 1
 mail@ymail.com
 mahiuddin habib
 secret-password
-50
+0
 1
 mail@coolmail.com
 habib
