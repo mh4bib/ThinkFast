@@ -42,7 +42,7 @@
 
 1678974152 source:d:\c-c++\projects\thinkfast\utils\clear_screen.c
 
-1690195930 source:d:\c-c++\projects\thinkfast\src\main_menu.c
+1690206390 source:d:\c-c++\projects\thinkfast\src\main_menu.c
 	<stdio.h>
 	<clear_screen.h>
 	<login.h>

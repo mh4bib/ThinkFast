@@ -62,7 +62,8 @@ void main_menu()
             client(&Email, &Level);
             break;
         case 5:
-            return 0;
+            exit(0);
+            // return 0;
             break;
         default:
             clear_screen();

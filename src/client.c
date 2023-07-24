@@ -83,6 +83,25 @@ int client(char** mail, int** level)
     send(client_socket, email, strlen(email), 0);
     printf("Connected to the server. Start typing messages...\n");
 
+    // Receive the the filename from the server
+    int bytes_received = recv(client_socket, server_reply, MAX_BUFFER_SIZE, 0);
+    if (bytes_received == SOCKET_ERROR || bytes_received == 0)
+    {
+        printf("Server disconnected\n");
+        closesocket(client_socket);
+        WSACleanup();
+        return 1;
+    }
+
+    // Null-terminate the received data to treat it as a string
+    server_reply[bytes_received] = '\0';
+
+    // Print the server's initial message
+    printf("Filename: %s\n", server_reply);
+
+    // Clear the buffer
+    memset(server_reply, 0, sizeof(server_reply));
+
     // Create a separate thread to handle user input
     HANDLE userInputThread = (HANDLE)_beginthreadex(NULL, 0, handleUserInput, (void*)&client_socket, 0, NULL);
 
