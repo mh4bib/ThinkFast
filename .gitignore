@@ -3,3 +3,5 @@
 .vscode/
 .*
 !.gitignore
+test.c
+test.h

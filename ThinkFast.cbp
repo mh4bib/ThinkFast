@@ -31,6 +31,9 @@
 		<Compiler>
 			<Add option="-Wall" />
 		</Compiler>
+		<Linker>
+			<Add option="-lws2_32" />
+		</Linker>
 		<Unit filename=".gitignore" />
 		<Unit filename="assets/folder_init.txt" />
 		<Unit filename="database/question_bank/higher_secondary/higher_secondary_level_21.txt" />
@@ -44,6 +47,7 @@
 		<Unit filename="database/question_bank/secondary/secondary_level_12.txt" />
 		<Unit filename="database/user_info.txt" />
 		<Unit filename="include/clear_screen.h" />
+		<Unit filename="include/client.h" />
 		<Unit filename="include/get_user_info.h" />
 		<Unit filename="include/login.h" />
 		<Unit filename="include/login_prompt.h" />
@@ -52,14 +56,19 @@
 		<Unit filename="include/playgame_submenu.h" />
 		<Unit filename="include/random_number.h" />
 		<Unit filename="include/register.h" />
+		<Unit filename="include/test.h" />
 		<Unit filename="include/update_level.h" />
 		<Unit filename="others/file_structure.txt" />
+		<Unit filename="src/client.c">
+			<Option compilerVar="CC" />
+		</Unit>
 		<Unit filename="src/login.c">
 			<Option compilerVar="CC" />
 		</Unit>
 		<Unit filename="src/main.c">
 			<Option compilerVar="CC" />
 		</Unit>
+		<Unit filename="src/main.exe" />
 		<Unit filename="src/main_menu.c">
 			<Option compilerVar="CC" />
 		</Unit>
@@ -67,6 +76,9 @@
 			<Option compilerVar="CC" />
 		</Unit>
 		<Unit filename="src/register.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="src/test.c">
 			<Option compilerVar="CC" />
 		</Unit>
 		<Unit filename="utils/clear_screen.c">

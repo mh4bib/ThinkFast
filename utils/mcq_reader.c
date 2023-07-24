@@ -52,7 +52,7 @@ struct MCQ_QUESTIONS* read_mcq(char* filename)
 }
 
 // store mcq and display one by one
-void display_mcq(char* filename, char* mail, int** Level)
+void display_mcq(char* filename, char* mail, int** Level, int isOnline)
 {
     struct MCQ_QUESTIONS* mcq_questions = NULL;
 

@@ -25,7 +25,7 @@
 	<register.h>
 	<update_level.h>
 
-1681108753 source:d:\c-c++\projects\thinkfast\utils\mcq_reader.c
+1690174297 source:d:\c-c++\projects\thinkfast\utils\mcq_reader.c
 	<stdio.h>
 	<stdlib.h>
 	<ctype.h>
@@ -42,15 +42,16 @@
 
 1678974152 source:d:\c-c++\projects\thinkfast\utils\clear_screen.c
 
-1680170496 source:d:\c-c++\projects\thinkfast\src\main_menu.c
+1690195930 source:d:\c-c++\projects\thinkfast\src\main_menu.c
 	<stdio.h>
 	<clear_screen.h>
 	<login.h>
 	<register.h>
 	<playgame_submenu.h>
+	<client.h>
 	<get_user_info.h>
 
-1680551280 source:d:\c-c++\projects\thinkfast\src\playgame_submenu.c
+1690174308 source:d:\c-c++\projects\thinkfast\src\playgame_submenu.c
 	<stdio.h>
 	<clear_screen.h>
 	<main_menu.h>
@@ -60,7 +61,7 @@
 	<stdlib.h>
 	<ctype.h>
 
-1680169749 source:d:\c-c++\projects\thinkfast\src\login.c
+1690195395 source:d:\c-c++\projects\thinkfast\src\login.c
 	<stdio.h>
 	<get_user_info.h>
 
@@ -81,4 +82,16 @@
 	<register.h>
 	<clear_screen.h>
 	<main_menu.h>
+
+1690205997 source:d:\c-c++\projects\thinkfast\src\client.c
+	<stdio.h>
+	<stdlib.h>
+	<winsock2.h>
+	<stdbool.h>
+	<windows.h>
+	<process.h>
+	<login_prompt.h>
+
+1690195783 source:d:\c-c++\projects\thinkfast\src\test.c
+	<stdio.h>
 

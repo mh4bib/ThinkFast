@@ -3,6 +3,8 @@
 #include<login.h>
 #include<register.h>
 #include <playgame_submenu.h>
+#include <client.h>
+// #include <test.h>
 #include<get_user_info.h>
 
 char* Email = NULL;
@@ -26,7 +28,8 @@ void main_menu()
         printf("| 1. Play Game                     |\n");
         printf("| 2. Analytics                     |\n");
         printf("| 3. Login/Register                |\n");
-        printf("| 4. Exit                          |\n");
+        printf("| 4. Attend Online                 |\n");
+        printf("| 5. Exit                          |\n");
         printf("====================================\n");
         printf("| Enter your choice (1-4):         |\n");
         printf("====================================\n");
@@ -54,6 +57,11 @@ void main_menu()
             login_prompt(&Email, &Level);
             break;
         case 4:
+            clear_screen();
+            // test(&Email, &Level);
+            client(&Email, &Level);
+            break;
+        case 5:
             return 0;
             break;
         default:

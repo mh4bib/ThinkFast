@@ -18,6 +18,6 @@ void playgame_submenu(char** mail, int** level)
     else
         sprintf(filename, "database\\question_bank\\primary\\primary_level_%d.txt", **level);
 
-    display_mcq(filename, *mail, level);
+    display_mcq(filename, *mail, level, 0);
 
 }

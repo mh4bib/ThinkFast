@@ -2,7 +2,7 @@ mail@email.com
 mahiuddin habib
 nopass
 0
-2
+1
 mail@gmail.com
 mahiuddin habib
 secret-password
@@ -12,7 +12,7 @@ mail@hotmail.com
 mahiuddin habib
 secret-password
 0
-1
+2
 mail@ymail.com
 mahiuddin habib
 secret-password
