@@ -31,7 +31,11 @@ unsigned __stdcall handleUserInput(void* args_ptr)
     printf("Email: %s\n", email);
     printf("Level: %d\n", **level);
 
-    // display_mcq(filename, email, level, 1);
+    char FileName[MAX_BUFFER_SIZE];
+    strcpy(FileName, filename);
+    FileName[strcspn(FileName, "\n")] = '\0';
+    
+    display_mcq(FileName, email, level, 1);
 
 
 
