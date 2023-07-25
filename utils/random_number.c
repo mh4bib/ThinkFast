@@ -4,13 +4,13 @@
 
 int visited[101];
 
-/* int is_duplicate(int num)
+int is_duplicate(int num)
 {
     if (!visited[num])
         return 0;
     else
         return 1;
-} */
+}
 
 
 void initialize_random() {

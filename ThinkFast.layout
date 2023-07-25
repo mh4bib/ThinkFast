@@ -2,79 +2,9 @@
 <CodeBlocks_layout_file>
 	<FileVersion major="1" minor="0" />
 	<ActiveTarget name="Debug" />
-	<File name="src\client.c" open="1" top="1" tabpos="8" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="3789" topLine="78" />
-		</Cursor>
-	</File>
-	<File name="include\get_user_info.h" open="1" top="0" tabpos="10" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="48" topLine="0" />
-		</Cursor>
-	</File>
-	<File name="database\question_bank\higher_secondary\higher_secondary_level_21.txt" open="0" top="0" tabpos="24" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="0" topLine="0" />
-		</Cursor>
-	</File>
-	<File name="include\mcq_reader.h" open="0" top="0" tabpos="12" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="275" topLine="0" />
-		</Cursor>
-	</File>
-	<File name="src\login.c" open="1" top="0" tabpos="12" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="964" topLine="20" />
-		</Cursor>
-	</File>
-	<File name=".gitignore" open="0" top="0" tabpos="2" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="22" topLine="0" />
-		</Cursor>
-	</File>
-	<File name="database\user_info.txt" open="1" top="0" tabpos="5" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="31" topLine="0" />
-		</Cursor>
-	</File>
-	<File name="src\main.c" open="1" top="0" tabpos="2" split="0" active="1" splitpos="0" zoom_1="3" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="193" topLine="0" />
-		</Cursor>
-	</File>
-	<File name="database\question_bank\primary\primary_level_4.txt" open="0" top="0" tabpos="29" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="0" topLine="0" />
-		</Cursor>
-	</File>
-	<File name="src\test.c" open="1" top="0" tabpos="11" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="0" topLine="0" />
-		</Cursor>
-	</File>
 	<File name="database\question_bank\primary\primary_level_1.txt" open="0" top="0" tabpos="26" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
 			<Cursor1 position="191" topLine="0" />
-		</Cursor>
-	</File>
-	<File name="utils\mcq_reader.c" open="1" top="0" tabpos="1" split="0" active="1" splitpos="0" zoom_1="4" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="4124" topLine="117" />
-		</Cursor>
-	</File>
-	<File name="include\login.h" open="0" top="0" tabpos="11" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="0" topLine="0" />
-		</Cursor>
-	</File>
-	<File name="src\register.c" open="1" top="0" tabpos="7" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="1296" topLine="41" />
-		</Cursor>
-	</File>
-	<File name="database\question_bank\primary\primary_level_5.txt" open="0" top="0" tabpos="30" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="0" topLine="0" />
 		</Cursor>
 	</File>
 	<File name="src\playgame_submenu.c" open="1" top="0" tabpos="4" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
@@ -82,32 +12,12 @@
 			<Cursor1 position="420" topLine="0" />
 		</Cursor>
 	</File>
-	<File name="database\question_bank\primary\primary_level_2.txt" open="0" top="0" tabpos="27" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+	<File name="include\mcq_reader.h" open="0" top="0" tabpos="12" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="0" topLine="31" />
+			<Cursor1 position="275" topLine="0" />
 		</Cursor>
 	</File>
-	<File name="utils\get_user_info.c" open="1" top="0" tabpos="6" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="1233" topLine="0" />
-		</Cursor>
-	</File>
-	<File name="include\clear_screen.h" open="0" top="0" tabpos="7" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="51" topLine="0" />
-		</Cursor>
-	</File>
-	<File name="include\register.h" open="0" top="0" tabpos="15" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="79" topLine="0" />
-		</Cursor>
-	</File>
-	<File name="include\random_number.h" open="0" top="0" tabpos="14" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="96" topLine="0" />
-		</Cursor>
-	</File>
-	<File name="database\question_bank\higher_secondary\higher_secondary_level_22.txt" open="0" top="0" tabpos="25" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+	<File name="assets\folder_init.txt" open="0" top="0" tabpos="3" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
 			<Cursor1 position="0" topLine="0" />
 		</Cursor>
@@ -117,14 +27,39 @@
 			<Cursor1 position="34" topLine="0" />
 		</Cursor>
 	</File>
-	<File name="utils\update_level.c" open="0" top="0" tabpos="20" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+	<File name="database\question_bank\primary\primary_level_2.txt" open="0" top="0" tabpos="27" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="962" topLine="13" />
+			<Cursor1 position="0" topLine="31" />
 		</Cursor>
 	</File>
-	<File name="include\login_prompt.h" open="0" top="0" tabpos="23" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+	<File name="include\register.h" open="0" top="0" tabpos="15" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="79" topLine="0" />
+		</Cursor>
+	</File>
+	<File name="src\client.c" open="1" top="1" tabpos="8" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="7751" topLine="242" />
+		</Cursor>
+	</File>
+	<File name="database\question_bank\primary\primary_level_4.txt" open="0" top="0" tabpos="29" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
 			<Cursor1 position="0" topLine="0" />
+		</Cursor>
+	</File>
+	<File name="database\question_bank\primary\primary_level_3.txt" open="0" top="0" tabpos="28" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="0" topLine="31" />
+		</Cursor>
+	</File>
+	<File name="src\test.c" open="1" top="0" tabpos="11" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="0" topLine="0" />
+		</Cursor>
+	</File>
+	<File name="src\main.c" open="1" top="0" tabpos="2" split="0" active="1" splitpos="0" zoom_1="3" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="193" topLine="0" />
 		</Cursor>
 	</File>
 	<File name="include\update_level.h" open="0" top="0" tabpos="21" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
@@ -132,7 +67,92 @@
 			<Cursor1 position="0" topLine="0" />
 		</Cursor>
 	</File>
+	<File name="src\login.c" open="1" top="0" tabpos="12" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="964" topLine="20" />
+		</Cursor>
+	</File>
 	<File name="include\playgame_submenu.h" open="0" top="0" tabpos="13" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="0" topLine="0" />
+		</Cursor>
+	</File>
+	<File name="src\register.c" open="1" top="0" tabpos="7" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="1296" topLine="41" />
+		</Cursor>
+	</File>
+	<File name="utils\update_level.c" open="0" top="0" tabpos="20" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="962" topLine="13" />
+		</Cursor>
+	</File>
+	<File name="database\question_bank\higher_secondary\higher_secondary_level_22.txt" open="0" top="0" tabpos="25" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="0" topLine="0" />
+		</Cursor>
+	</File>
+	<File name="database\user_info.txt" open="1" top="0" tabpos="5" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="31" topLine="0" />
+		</Cursor>
+	</File>
+	<File name="database\question_bank\higher_secondary\higher_secondary_level_21.txt" open="0" top="0" tabpos="24" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="0" topLine="0" />
+		</Cursor>
+	</File>
+	<File name="utils\mcq_reader.c" open="1" top="0" tabpos="1" split="0" active="1" splitpos="0" zoom_1="4" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="4124" topLine="117" />
+		</Cursor>
+	</File>
+	<File name="include\main_menu.h" open="0" top="0" tabpos="4" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="45" topLine="0" />
+		</Cursor>
+	</File>
+	<File name="include\clear_screen.h" open="0" top="0" tabpos="7" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="51" topLine="0" />
+		</Cursor>
+	</File>
+	<File name="database\question_bank\primary\primary_level_5.txt" open="0" top="0" tabpos="30" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="0" topLine="0" />
+		</Cursor>
+	</File>
+	<File name="src\main_menu.c" open="1" top="0" tabpos="3" split="0" active="1" splitpos="0" zoom_1="5" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="1621" topLine="36" />
+		</Cursor>
+	</File>
+	<File name="include\login_prompt.h" open="0" top="0" tabpos="23" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="0" topLine="0" />
+		</Cursor>
+	</File>
+	<File name=".gitignore" open="0" top="0" tabpos="2" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="22" topLine="0" />
+		</Cursor>
+	</File>
+	<File name="utils\get_user_info.c" open="1" top="0" tabpos="6" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="1233" topLine="0" />
+		</Cursor>
+	</File>
+	<File name="utils\login_prompt.c" open="0" top="0" tabpos="22" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="1155" topLine="20" />
+		</Cursor>
+	</File>
+	<File name="others\file_structure.txt" open="0" top="0" tabpos="13" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="0" topLine="0" />
+		</Cursor>
+	</File>
+	<File name="include\login.h" open="0" top="0" tabpos="11" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
 			<Cursor1 position="0" topLine="0" />
 		</Cursor>
@@ -142,29 +162,9 @@
 			<Cursor1 position="353" topLine="10" />
 		</Cursor>
 	</File>
-	<File name="include\main_menu.h" open="0" top="0" tabpos="4" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+	<File name="include\random_number.h" open="0" top="0" tabpos="14" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="45" topLine="0" />
-		</Cursor>
-	</File>
-	<File name="src\main_menu.c" open="1" top="0" tabpos="3" split="0" active="1" splitpos="0" zoom_1="5" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="1621" topLine="36" />
-		</Cursor>
-	</File>
-	<File name="assets\folder_init.txt" open="0" top="0" tabpos="3" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="0" topLine="0" />
-		</Cursor>
-	</File>
-	<File name="utils\login_prompt.c" open="0" top="0" tabpos="22" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="1155" topLine="20" />
-		</Cursor>
-	</File>
-	<File name="database\question_bank\primary\primary_level_3.txt" open="0" top="0" tabpos="28" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="0" topLine="31" />
+			<Cursor1 position="96" topLine="0" />
 		</Cursor>
 	</File>
 	<File name="utils\clear_screen.c" open="0" top="0" tabpos="6" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
@@ -172,9 +172,9 @@
 			<Cursor1 position="67" topLine="0" />
 		</Cursor>
 	</File>
-	<File name="others\file_structure.txt" open="0" top="0" tabpos="13" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+	<File name="include\get_user_info.h" open="1" top="0" tabpos="10" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="0" topLine="0" />
+			<Cursor1 position="48" topLine="0" />
 		</Cursor>
 	</File>
 </CodeBlocks_layout_file>
