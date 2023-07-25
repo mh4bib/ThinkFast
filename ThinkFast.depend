@@ -25,7 +25,7 @@
 	<register.h>
 	<update_level.h>
 
-1690174297 source:d:\c-c++\projects\thinkfast\utils\mcq_reader.c
+1690253546 source:d:\c-c++\projects\thinkfast\utils\mcq_reader.c
 	<stdio.h>
 	<stdlib.h>
 	<ctype.h>
@@ -83,13 +83,18 @@
 	<clear_screen.h>
 	<main_menu.h>
 
-1690250820 source:d:\c-c++\projects\thinkfast\src\client.c
+1690286236 source:d:\c-c++\projects\thinkfast\src\client.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<winsock2.h>
 	<stdio.h>
 	<stdlib.h>
 	<winsock2.h>
 	<stdbool.h>
 	<windows.h>
 	<process.h>
+	<mcq_reader.h>
 	<login_prompt.h>
 
 1690195783 source:d:\c-c++\projects\thinkfast\src\test.c

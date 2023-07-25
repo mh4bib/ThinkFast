@@ -1,9 +1,104 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <string.h>
+#include <winsock2.h>
+
+#define SERVER_IP "127.0.0.1"
+#define PORT 12345
+
+int client(char** mail, int** level)
+{
+    WSADATA wsa;
+    SOCKET client_socket;
+    struct sockaddr_in server_addr;
+    char buffer[1024];
+
+    // Initialize Winsock
+    if (WSAStartup(MAKEWORD(2, 2), &wsa) != 0)
+    {
+        perror("WSAStartup failed");
+        return 1;
+    }
+
+    // Create socket
+    if ((client_socket = socket(AF_INET, SOCK_STREAM, 0)) == INVALID_SOCKET)
+    {
+        perror("Socket creation failed");
+        return 1;
+    }
+
+    // Prepare the sockaddr_in structure
+    server_addr.sin_family = AF_INET;
+    server_addr.sin_addr.s_addr = inet_addr(SERVER_IP);
+    server_addr.sin_port = htons(PORT);
+
+    // Connect to the server
+    if (connect(client_socket, (struct sockaddr*)&server_addr, sizeof(server_addr)) == SOCKET_ERROR)
+    {
+        perror("Connection failed");
+        return 1;
+    }
+
+    // Send an email to the server
+    // const char* email = "hello@example.com";
+    if (send(client_socket, *mail, strlen(*mail), 0) == SOCKET_ERROR)
+    {
+        perror("Email sending failed");
+        closesocket(client_socket);
+        return 1;
+    }
+
+    // Receive file destination from the server
+    int bytes_received = recv(client_socket, buffer, sizeof(buffer), 0);
+    if (bytes_received == SOCKET_ERROR || bytes_received == 0)
+    {
+        perror("File destination receiving failed");
+        closesocket(client_socket);
+        return 1;
+    }
+    buffer[bytes_received] = '\0';
+
+    //Show quiz here
+    int score = display_mcq(buffer, *mail, level, 1);
+    printf("You scored:%d\n", score);
+
+    // Send the total score to the server
+    sprintf(buffer, "%d", score);
+    if (send(client_socket, buffer, strlen(buffer), 0) == SOCKET_ERROR)
+    {
+        perror("Number sending failed");
+        closesocket(client_socket);
+        return 1;
+    }
+
+    // Receive another number from the server
+    bytes_received = recv(client_socket, buffer, sizeof(buffer), 0);
+    if (bytes_received == SOCKET_ERROR || bytes_received == 0)
+    {
+        perror("Number receiving failed");
+        closesocket(client_socket);
+        return 1;
+    }
+    buffer[bytes_received] = '\0';
+    int number_from_server = atoi(buffer);
+    printf("Received number: %d\n", number_from_server);
+
+    // Close the socket and cleanup
+    closesocket(client_socket);
+    WSACleanup();
+
+    return 0;
+}
+
+
+/* 
+#include <stdio.h>
+#include <stdlib.h>
 #include <winsock2.h>
 #include <stdbool.h>
 #include <windows.h>
 #include <process.h> // For _beginthreadex
+#include<mcq_reader.h>
 #include <login_prompt.h>
 CONDITION_VARIABLE cv;
 CRITICAL_SECTION cs;
@@ -35,11 +130,11 @@ unsigned __stdcall handleUserInput(void* args_ptr)
     strcpy(FileName, filename);
     FileName[strcspn(FileName, "\n")] = '\0';
     
-    display_mcq(FileName, email, level, 1);
+    int score = display_mcq(FileName, email, level, 1);
+    printf("You scored:%d\n", score);
 
-
-
-
+    // send the score to the server
+    //--------- ------ ----------
 
 
     
@@ -136,11 +231,6 @@ int client(char** mail, int** level)
     // Create a separate thread to handle user input
     HANDLE userInputThread = (HANDLE)_beginthreadex(NULL, 0, handleUserInput, (void*)&args, 0, NULL);
 
-/*  
-    // Clear the buffer
-    memset(filename, 0, sizeof(filename)); 
-*/
-
     InitializeConditionVariable(&cv);
     InitializeCriticalSection(&cs);
 
@@ -178,3 +268,4 @@ int client(char** mail, int** level)
 
     return 0;
 }
+ */

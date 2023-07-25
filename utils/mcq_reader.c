@@ -52,7 +52,7 @@ struct MCQ_QUESTIONS* read_mcq(char* filename)
 }
 
 // store mcq and display one by one
-void display_mcq(char* filename, char* mail, int** Level, int isOnline)
+int display_mcq(char* filename, char* mail, int** Level, int isOnline)
 {
     struct MCQ_QUESTIONS* mcq_questions = NULL;
 
@@ -134,5 +134,14 @@ void display_mcq(char* filename, char* mail, int** Level, int isOnline)
     printf("Press any key to continue...\n");
     getch();
     clear_screen();
-    main_menu();
+
+    if (!isOnline)
+    {
+        main_menu();
+        // return 0;
+    }
+    else
+    {
+        return score;
+    }
 }
