@@ -10,12 +10,36 @@ CRITICAL_SECTION cs;
 #define PORT 8080
 #define MAX_BUFFER_SIZE 1024
 
- // Function to handle user input in a separate thread
-unsigned __stdcall handleUserInput(void* client_socket_ptr)
-{
-    SOCKET client_socket = *(SOCKET*)client_socket_ptr;
-    char message[MAX_BUFFER_SIZE];
+struct ThreadArgs {
+    SOCKET client_socket;
+    const char* filename;
+    const char* email;
+    const int** level;
+};
 
+ // Function to handle user input in a separate thread
+unsigned __stdcall handleUserInput(void* args_ptr)
+{
+    struct ThreadArgs* args = (struct ThreadArgs*)args_ptr;
+    SOCKET client_socket = args->client_socket;
+    const char* filename = args->filename;
+    const char* email = args->email;
+    const int** level = args->level;
+
+    // Print the filename and email received from the main thread
+    printf("Filename: %s\n", filename);
+    printf("Email: %s\n", email);
+    printf("Level: %d\n", **level);
+
+    // display_mcq(filename, email, level, 1);
+
+
+
+
+
+
+    
+    char message[MAX_BUFFER_SIZE];
     while (1)
     {
         // Get user input
@@ -48,7 +72,7 @@ int client(char** mail, int** level)
     WSADATA wsa;
     SOCKET client_socket;
     struct sockaddr_in server;
-    char email[50], server_reply[MAX_BUFFER_SIZE];
+    char email[50], server_reply[MAX_BUFFER_SIZE], filename[MAX_BUFFER_SIZE];
 
     // Initialize Winsock
     if (WSAStartup(MAKEWORD(2, 2), &wsa) != 0)
@@ -84,7 +108,7 @@ int client(char** mail, int** level)
     printf("Connected to the server. Start typing messages...\n");
 
     // Receive the the filename from the server
-    int bytes_received = recv(client_socket, server_reply, MAX_BUFFER_SIZE, 0);
+    int bytes_received = recv(client_socket, filename, MAX_BUFFER_SIZE, 0);
     if (bytes_received == SOCKET_ERROR || bytes_received == 0)
     {
         printf("Server disconnected\n");
@@ -94,16 +118,24 @@ int client(char** mail, int** level)
     }
 
     // Null-terminate the received data to treat it as a string
-    server_reply[bytes_received] = '\0';
+    filename[bytes_received] = '\0';
 
     // Print the server's initial message
-    printf("Filename: %s\n", server_reply);
+    printf("Filename: %s\n", filename);
 
-    // Clear the buffer
-    memset(server_reply, 0, sizeof(server_reply));
+    struct ThreadArgs args;
+    args.client_socket = client_socket;
+    args.filename = filename;
+    args.email = email;
+    args.level = level;
 
     // Create a separate thread to handle user input
-    HANDLE userInputThread = (HANDLE)_beginthreadex(NULL, 0, handleUserInput, (void*)&client_socket, 0, NULL);
+    HANDLE userInputThread = (HANDLE)_beginthreadex(NULL, 0, handleUserInput, (void*)&args, 0, NULL);
+
+/*  
+    // Clear the buffer
+    memset(filename, 0, sizeof(filename)); 
+*/
 
     InitializeConditionVariable(&cv);
     InitializeCriticalSection(&cs);
