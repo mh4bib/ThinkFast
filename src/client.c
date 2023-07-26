@@ -2,6 +2,7 @@
 #include <stdlib.h>
 #include <string.h>
 #include <winsock2.h>
+#include <mcq_reader.h>
 
 #define SERVER_IP "127.0.0.1"
 #define PORT 12345
@@ -60,7 +61,7 @@ int client(char** mail, int** level)
     buffer[bytes_received] = '\0';
 
     //Show quiz here
-    int score = display_mcq(buffer, *mail, level, 1);
+    int score = display_mcq(buffer, *mail, level, 1, 20);
     printf("You scored:%d\n", score);
 
     // Send the total score to the server

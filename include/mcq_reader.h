@@ -16,7 +16,7 @@ struct MCQ_QUESTIONS
 
 struct MCQ_QUESTIONS *read_mcq(char *filename); */
 
-int display_mcq(char* filename, char *mail, int **Level, int isOnline);
+int display_mcq(char* filename, char* mail, int** Level, int isOnline, int time_limit);
 
 #endif // MCQ_READER_H
 

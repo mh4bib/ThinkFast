@@ -1,10 +1,10 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <ctype.h>
-#include <time.h>
 #include <windows.h>
 #include <mcq_reader.h>
 #include <random_number.h>
+#include <get_current_time.h>
 #include <clear_screen.h>
 
 extern SOCKET client_socket;
@@ -54,9 +54,11 @@ struct MCQ_QUESTIONS* read_mcq(char* filename)
 }
 
 // store mcq and display one by one
-int display_mcq(char* filename, char* mail, int** Level, int isOnline)
+int display_mcq(char* filename, char* mail, int** Level, int isOnline, int time_limit)
 {
     char buffer[1024];
+    double start_time = get_current_time();
+
     struct MCQ_QUESTIONS* mcq_questions = NULL;
 
     mcq_questions = read_mcq(filename);
@@ -85,7 +87,9 @@ int display_mcq(char* filename, char* mail, int** Level, int isOnline)
             printf("# ");
         for (int k = i + 1; k < total_questions + 1; k++)
             printf(". ");
-        printf("]\n\n");
+        printf("]\t");
+
+        printf("Remaining seconds: %.0f\n\n", time_limit - (get_current_time() - start_time));
 
         // Displaying question and options
         printf("%s", mcq[random_question].text);
@@ -94,8 +98,21 @@ int display_mcq(char* filename, char* mail, int** Level, int isOnline)
             printf("%s", mcq[random_question].options[j]);
         }
 
+
         // Taking user's choice
         scanf("\n%c", &user_answer[random_question]);
+
+        //checking timer before accepting the answer
+        // current_time = get_current_time();
+        if ((get_current_time() - start_time) > time_limit)
+        {
+            clear_screen();
+            printf("Your time's up!\n");
+            printf("Press any key to continue...\n");
+            getch();
+            break;
+        }
+
         user_answer[random_question] = toupper(user_answer[random_question]);
 
         if (!isOnline)

@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <clear_screen.h>
 #include <main_menu.h>
+#include <mcq_reader.h>
 
 void playgame_submenu(char** mail, int** level)
 {
@@ -18,6 +19,6 @@ void playgame_submenu(char** mail, int** level)
     else
         sprintf(filename, "database\\question_bank\\primary\\primary_level_%d.txt", **level);
 
-    display_mcq(filename, *mail, level, 0);
+    display_mcq(filename, *mail, level, 0, 20);
 
 }
