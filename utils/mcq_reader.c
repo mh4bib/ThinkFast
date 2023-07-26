@@ -7,6 +7,8 @@
 #include <random_number.h>
 #include <clear_screen.h>
 
+extern SOCKET client_socket;
+
 struct MCQ
 {
     char text[100];
@@ -54,6 +56,7 @@ struct MCQ_QUESTIONS* read_mcq(char* filename)
 // store mcq and display one by one
 int display_mcq(char* filename, char* mail, int** Level, int isOnline)
 {
+    char buffer[1024];
     struct MCQ_QUESTIONS* mcq_questions = NULL;
 
     mcq_questions = read_mcq(filename);
@@ -95,9 +98,29 @@ int display_mcq(char* filename, char* mail, int** Level, int isOnline)
         scanf("\n%c", &user_answer[random_question]);
         user_answer[random_question] = toupper(user_answer[random_question]);
 
-        // updating score
-        if (user_answer[random_question] == mcq[random_question].correct_option)
-            score++;
+        if (!isOnline)
+        {
+            // updating score
+            if (user_answer[random_question] == mcq[random_question].correct_option)
+                score++;
+        }
+        else
+        {
+            // updating score
+            if (user_answer[random_question] == mcq[random_question].correct_option)
+                score++;
+
+            // Send score to the server
+            sprintf(buffer, "%d", score);
+            if (send(client_socket, buffer, strlen(buffer), 0) == SOCKET_ERROR)
+            {
+                perror("onScore sending failed");
+                closesocket(client_socket);
+                return 1;
+            }
+        }
+
+
 
         //Sleep(300);
         clear_screen();
