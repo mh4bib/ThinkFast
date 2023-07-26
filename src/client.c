@@ -6,6 +6,7 @@
 
 #define SERVER_IP "127.0.0.1"
 #define PORT 12345
+#define MAX_BUFFER_SIZE 1024
 
 SOCKET client_socket;
 
@@ -13,7 +14,8 @@ int client(char** mail, int** level)
 {
     WSADATA wsa;
     struct sockaddr_in server_addr;
-    char buffer[1024];
+    char buffer[MAX_BUFFER_SIZE];
+    char time_limit_buffer[MAX_BUFFER_SIZE];
 
     // Initialize Winsock
     if (WSAStartup(MAKEWORD(2, 2), &wsa) != 0)
@@ -60,8 +62,20 @@ int client(char** mail, int** level)
     }
     buffer[bytes_received] = '\0';
 
+    // Receive time limit from the server
+    bytes_received = recv(client_socket, time_limit_buffer, sizeof(time_limit_buffer), 0);
+    if (bytes_received == SOCKET_ERROR || bytes_received == 0)
+    {
+        perror("Time limit receiving failed");
+        closesocket(client_socket);
+        return 1;
+    }
+    time_limit_buffer[bytes_received] = '\0';
+    int time_limit = atoi(time_limit_buffer);
+    printf("Time Limit Received: %d\n", time_limit);
+
     //Show quiz here
-    int score = display_mcq(buffer, *mail, level, 1, 20);
+    int score = display_mcq(buffer, *mail, level, 1, time_limit);
     printf("You scored:%d\n", score);
 
     // Send the total score to the server

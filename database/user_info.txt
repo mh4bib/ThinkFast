@@ -7,7 +7,7 @@ mail@gmail.com
 mahiuddin habib
 secret-password
 0
-2
+1
 mail@hotmail.com
 mahiuddin habib
 secret-password

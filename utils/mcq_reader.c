@@ -103,14 +103,30 @@ int display_mcq(char* filename, char* mail, int** Level, int isOnline, int time_
         scanf("\n%c", &user_answer[random_question]);
 
         //checking timer before accepting the answer
-        // current_time = get_current_time();
         if ((get_current_time() - start_time) > time_limit)
         {
             clear_screen();
             printf("Your time's up!\n");
-            printf("Press any key to continue...\n");
-            getch();
-            break;
+            if (!isOnline)
+            {
+                printf("Press any key to continue...\n");
+                getch();
+                break;
+            }
+            else
+            {
+                // Send -1 to terminate receiving score
+                sprintf(buffer, "%d", -1);
+                if (send(client_socket, buffer, strlen(buffer), 0) == SOCKET_ERROR)
+                {
+                    perror("onScore sending failed");
+                    closesocket(client_socket);
+                    return 1;
+                }
+                printf("Press any key to continue...\n");
+                getch();
+                break;
+            }
         }
 
         user_answer[random_question] = toupper(user_answer[random_question]);
