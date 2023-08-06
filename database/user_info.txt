@@ -1,55 +1,10 @@
-mail@email.com
-mahiuddin habib
+abc@email.com
+abc
 nopass
-0
-2
-mail@gmail.com
-mahiuddin habib
-secret-password
-0
-1
-mail@hotmail.com
-mahiuddin habib
-secret-password
-0
 4
-mail@ymail.com
-mahiuddin habib
-secret-password
-0
-1
-mail@coolmail.com
-habib
-1234
-0
-1
-qmail@whymail.com
-Stranger
-1234
-0
-1
-mymail@nomail.com
-no one
-nothing
-0
-1
-mustakim@gmail.com
-Mustakim Mia
-12345678
-0
-1
-abc
-abc
-abc
-0
-1
-ariful@gmail.com
-Ariful
-1234
-0
-1
-1234
-1234
-1234
+2
+xyz@email.com
+xyz
+nopass
 0
 1

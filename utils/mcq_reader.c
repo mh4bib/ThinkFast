@@ -5,6 +5,8 @@
 #include <mcq_reader.h>
 #include <random_number.h>
 #include <get_current_time.h>
+#include <update_level.h>
+#include <update_score.h>
 #include <clear_screen.h>
 
 extern SOCKET client_socket;
@@ -119,7 +121,7 @@ int display_mcq(char* filename, char* mail, int** Level, int isOnline, int time_
                 sprintf(buffer, "%d", -1);
                 if (send(client_socket, buffer, strlen(buffer), 0) == SOCKET_ERROR)
                 {
-                    perror("onScore sending failed");
+                    perror("terminating code sending failed");
                     closesocket(client_socket);
                     return 1;
                 }
@@ -143,11 +145,11 @@ int display_mcq(char* filename, char* mail, int** Level, int isOnline, int time_
             if (user_answer[random_question] == mcq[random_question].correct_option)
                 score++;
 
-            // Send score to the server
+            // Send updated score to the server
             sprintf(buffer, "%d", score);
             if (send(client_socket, buffer, strlen(buffer), 0) == SOCKET_ERROR)
             {
-                perror("onScore sending failed");
+                perror("uScore sending failed");
                 closesocket(client_socket);
                 return 1;
             }
@@ -198,6 +200,7 @@ int display_mcq(char* filename, char* mail, int** Level, int isOnline, int time_
     }
     else
     {
+        update_score(mail, score);
         return score;
     }
 }

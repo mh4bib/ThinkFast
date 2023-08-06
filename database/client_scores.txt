@@ -1,0 +1,13 @@
+abc@email.com
+3
+xyz@email.com
+3
+lmn@email.com
+3
+xyz@email.com
+2
+abc@email.com
+0
+abc@email.com
+5
+Email: abc@email.com, Total Score: 4

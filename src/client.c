@@ -87,17 +87,28 @@ int client(char** mail, int** level)
         return 1;
     }
 
-    // Receive another number from the server
+    FILE* file = fopen("D:\\C-C++\\Projects\\ThinkFast\\database\\client_scores.txt", "a"); // Open the file in append mode
+    if (file == NULL) {
+        perror("Error opening file");
+        return NULL;
+    }
+
+    // Write client_info to the file
+    fprintf(file, "Email: %s, Total Score: %d\n", *mail, score);
+
+    fclose(file);
+
+    // Receive position from the server
     bytes_received = recv(client_socket, buffer, sizeof(buffer), 0);
     if (bytes_received == SOCKET_ERROR || bytes_received == 0)
     {
-        perror("Number receiving failed");
+        perror("Position receiving failed");
         closesocket(client_socket);
         return 1;
     }
     buffer[bytes_received] = '\0';
-    int number_from_server = atoi(buffer);
-    printf("Received number: %d\n", number_from_server);
+    int position = atoi(buffer);
+    printf("Your position: %d\n", position);
 
     // Close the socket and cleanup
     closesocket(client_socket);

@@ -1,3 +1,4 @@
+//build command: gcc -o main.exe src/*.c utils/*.c -I include/ -lws2_32
 #include <stdio.h>
 #include <stdlib.h>
 #include <windows.h>
