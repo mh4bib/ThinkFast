@@ -11,3 +11,9 @@ abc@email.com
 abc@email.com
 5
 Email: abc@email.com, Total Score: 4
+Email: abc@email.com, Total Score: 9
+Email: abc@email.com, Total Score: 4
+Email: abc@email.com, Total Score: 2
+Email: abc@email.com, Total Score: 4
+Email: abc@email.com, Total Score: 7
+Email: xyz@email.com, Total Score: 6

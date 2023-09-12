@@ -1,10 +1,10 @@
 abc@email.com
 abc
 nopass
-4
+7
 2
 xyz@email.com
 xyz
 nopass
-0
+6
 1
