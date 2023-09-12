@@ -4,7 +4,7 @@
 #include<register.h>
 #include <playgame_submenu.h>
 #include <client.h>
-// #include <test.h>
+#include <leader_board.h>
 #include<get_user_info.h>
 
 char* Email = NULL;
@@ -50,7 +50,7 @@ void main_menu()
             playgame_submenu(&Email, &Level);
             break;
         case 2:
-            // code to add questions
+            leader_board();
             break;
         case 3:
             clear_screen();
