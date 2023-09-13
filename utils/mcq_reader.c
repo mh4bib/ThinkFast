@@ -13,8 +13,8 @@ extern SOCKET client_socket;
 
 struct MCQ
 {
-    char text[100];
-    char options[4][50];
+    char text[1024];
+    char options[4][1024];
     char correct_option;
 };
 
@@ -40,13 +40,13 @@ struct MCQ_QUESTIONS* read_mcq(char* filename)
     int count = 1;
     mcq_questions->mcq = (struct MCQ*)malloc(count * sizeof(struct MCQ));
 
-    while (fgets(mcq_questions->mcq[mcq_questions->total_question].text, 100, fp))
+    while (fgets(mcq_questions->mcq[mcq_questions->total_question].text, 1024, fp))
     {
         count++;
         mcq_questions->mcq = realloc(mcq_questions->mcq, count * sizeof(struct MCQ));
         for (int i = 0; i < 4; i++)
         {
-            fgets(mcq_questions->mcq[mcq_questions->total_question].options[i], 50, fp);
+            fgets(mcq_questions->mcq[mcq_questions->total_question].options[i], 1024, fp);
         }
         fscanf(fp, "%c\n", &mcq_questions->mcq[mcq_questions->total_question].correct_option);
         mcq_questions->total_question++;

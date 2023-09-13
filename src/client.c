@@ -3,6 +3,7 @@
 #include <string.h>
 #include <winsock2.h>
 #include <mcq_reader.h>
+#include <leader_board.h>
 
 #define SERVER_IP "127.0.0.1"
 #define PORT 12345
@@ -86,7 +87,7 @@ int client(char** mail, int** level)
         closesocket(client_socket);
         return 1;
     }
-
+/* 
     FILE* file = fopen("D:\\C-C++\\Projects\\ThinkFast\\database\\client_scores.txt", "a"); // Open the file in append mode
     if (file == NULL) {
         perror("Error opening file");
@@ -109,10 +110,15 @@ int client(char** mail, int** level)
     buffer[bytes_received] = '\0';
     int position = atoi(buffer);
     printf("Your position: %d\n", position);
-
+ */
     // Close the socket and cleanup
     closesocket(client_socket);
     WSACleanup();
+
+    printf("Press any key to continue...\n");
+    getch();
+    clear_screen();
+    leader_board();
 
     return 0;
 }

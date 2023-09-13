@@ -50,6 +50,7 @@ void main_menu()
             playgame_submenu(&Email, &Level);
             break;
         case 2:
+            clear_screen();
             leader_board();
             break;
         case 3:

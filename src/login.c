@@ -1,7 +1,8 @@
 #include<stdio.h>
 #include<get_user_info.h>
+#include<login_prompt.h>
 
-int login(char **Email, int **Level) {
+int login(char** Email, int** Level) {
   struct USER_INFO* user_info = NULL;
   char mail[100], pass[100];
   int is_valid = 0, i;
@@ -28,8 +29,12 @@ int login(char **Email, int **Level) {
 
   if (!is_valid)
   {
-    printf("You are not registered!\n");
-    return 1;
+    printf("You are not registered!,\n");
+    printf("Press any key to continue...\n");
+    getch();
+    clear_screen();
+    login_prompt(Email, Level);
+    // return 1;
   }
 
   printf("Enter Password: ");
