@@ -39,10 +39,11 @@ int leader_board() {
 
     sort(user, total_users);
 
-    printf("Rank    User Name   Score\n");
+    printf("Rank        User Name      Score       \n");
+    printf("----        ---------      -----       \n");
     for (int i = 0; i < total_users; i++)
     {
-        printf("%d  %s  %d\n", i + 1, user[i].name, user[i].highest_score);
+        printf("%-10d  %-13s  %-8d\n", i + 1, user[i].name, user[i].highest_score);
     }
 
     printf("\n\nPress any key to continue...\n");
