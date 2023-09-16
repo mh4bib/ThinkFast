@@ -162,11 +162,11 @@ int display_mcq(char* filename, char* mail, int** Level, int isOnline, int time_
     }
 
     // displaying answer sheet
-    printf("==============================================\n");
-    printf("                     RESULT\n");
-    printf("==============================================\n");
-    printf("            You scored %d out of %d\n", score, total_questions);
-    printf("==============================================\n");
+    printf("                              +------------+\n");
+    printf("                              |   RESULT   |\n");
+    printf("                       +------+------------+-------+\n");
+    printf("                       |  You scored %-2d out of %-2d  |\n", score, total_questions);
+    printf("                       +---------------------------+\n\n");
     for (int i = 0; i < total_questions; i++)
     {
         printf("Q%d. %s", i + 1, mcq[i].text);

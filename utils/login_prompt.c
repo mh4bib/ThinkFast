@@ -8,15 +8,15 @@ void login_prompt(char** email, int** level)
     int choice;
     do
     {
-        printf("====================================\n");
+        printf("+----------------------------------+\n");
         printf("|            Select One            |\n");
-        printf("====================================\n");
+        printf("+----------------------------------+\n");
         printf("| 1. Login                         |\n");
         printf("| 2. Register                      |\n");
         printf("| 3. Go back to Home               |\n");
-        printf("====================================\n");
+        printf("+----------------------------------+\n");
         printf("| Enter your choice (1-3):         |\n");
-        printf("====================================\n");
+        printf("+----------------------------------+\n");
 
         if (scanf("%d", &choice) != 1)
         {

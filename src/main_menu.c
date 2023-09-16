@@ -22,17 +22,17 @@ void main_menu()
     int choice;
     do
     {
-        printf("====================================\n");
+        printf("+----------------------------------+\n");
         printf("|               Home               |\n");
-        printf("====================================\n");
+        printf("+----------------------------------+\n");
         printf("| 1. Play Game                     |\n");
         printf("| 2. Analytics                     |\n");
         printf("| 3. Login/Register                |\n");
         printf("| 4. Attend Online                 |\n");
         printf("| 5. Exit                          |\n");
-        printf("====================================\n");
+        printf("+----------------------------------+\n");
         printf("| Enter your choice (1-4):         |\n");
-        printf("====================================\n");
+        printf("+----------------------------------+\n");
         // fflush(stdout);  // make sure the prompt is displayed before input is read
         if (scanf("%d", &choice) != 1)
         {
