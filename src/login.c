@@ -2,6 +2,8 @@
 #include<get_user_info.h>
 #include<login_prompt.h>
 
+extern yCoord;
+
 int login(char** Email, int** Level) {
   struct USER_INFO* user_info = NULL;
   char mail[100], pass[100];
@@ -32,7 +34,7 @@ int login(char** Email, int** Level) {
     printf("You are not registered!,\n");
     printf("Press any key to continue...\n");
     getch();
-    clear_screen();
+    clear_screen(&yCoord);
     login_prompt(Email, Level);
     // return 1;
   }
@@ -48,7 +50,7 @@ int login(char** Email, int** Level) {
 
   *Email = &user[i].email;
   *Level = &user[i].level;
-  clear_screen();
+  clear_screen(&yCoord);
   main_menu();
   return 0;
 }

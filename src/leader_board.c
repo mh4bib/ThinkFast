@@ -2,6 +2,10 @@
 #include<get_user_info.h>
 #include<main_menu.h>
 #include<clear_screen.h>
+#include<custom_print.h>
+#include<gotoxy.h>
+
+extern yCoord;
 
 void sort(struct USER *user, int size) {
     for (int step = 0; step < size - 1; ++step) {
@@ -39,18 +43,22 @@ int leader_board() {
 
     sort(user, total_users);
 
-    printf("+--------------------------------------+\n");
-    printf("|Rank        User Name      Score      |\n");
-    printf("+--------------------------------------+\n");
+    printCenter("+--------------------------------------+\n", &yCoord);
+    printCenter("|Rank        User Name      Score      |\n", &yCoord);
+    printCenter("+--------------------------------------+\n", &yCoord);
     for (int i = 0; i < total_users; i++)
     {
+        gotoxy(20, yCoord);
         printf("|%-10d  %-13s  %-11d|\n", i + 1, user[i].name, user[i].highest_score);
+        yCoord++;
     }
-    printf("+--------------------------------------+\n");
+    printCenter("+--------------------------------------+\n", &yCoord);
 
-    printf("\n\nPress any key to continue...\n");
+    gotoxy(20, yCoord+2);
+    printf("Press any key to continue...\n");
+    gotoxy(20+28, yCoord+2);
     getch();
 
-    clear_screen();
+    clear_screen(&yCoord);
     main_menu();
 }

@@ -7,6 +7,7 @@
 #include<login.h>
 #include<register.h>
 #include<update_level.h>
+extern yCoord;
 
 int main()
 {
@@ -19,7 +20,7 @@ int main()
 
   printf("\n\nPress any key to continue...\n");
   getch();
-  clear_screen();
+  clear_screen(&yCoord);
   main_menu();
 
   return 0;

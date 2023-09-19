@@ -11,6 +11,8 @@
 
 SOCKET client_socket;
 
+extern yCoord;
+
 int client(char** mail, int** level)
 {
     WSADATA wsa;
@@ -117,7 +119,7 @@ int client(char** mail, int** level)
 
     printf("Press any key to continue...\n");
     getch();
-    clear_screen();
+    clear_screen(&yCoord);
     leader_board();
 
     return 0;

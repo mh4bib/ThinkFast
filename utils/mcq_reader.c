@@ -9,6 +9,8 @@
 #include <update_score.h>
 #include <clear_screen.h>
 
+extern yCoord;
+
 extern SOCKET client_socket;
 
 struct MCQ
@@ -75,6 +77,10 @@ int display_mcq(char* filename, char* mail, int** Level, int isOnline, int time_
     char user_answer[total_questions];
     int score = 0;
 
+    for (int i = 0; i < total_questions; i++)
+        user_answer[i] = NULL;
+
+
     initialize_random();
 
     // Loop for displaying questions
@@ -107,7 +113,7 @@ int display_mcq(char* filename, char* mail, int** Level, int isOnline, int time_
         //checking timer before accepting the answer
         if ((get_current_time() - start_time) > time_limit)
         {
-            clear_screen();
+            clear_screen(&yCoord);
             printf("Your time's up!\n");
             if (!isOnline)
             {
@@ -158,7 +164,7 @@ int display_mcq(char* filename, char* mail, int** Level, int isOnline, int time_
 
 
         //Sleep(300);
-        clear_screen();
+        clear_screen(&yCoord);
     }
 
     // displaying answer sheet
@@ -177,8 +183,13 @@ int display_mcq(char* filename, char* mail, int** Level, int isOnline, int time_
         }
         else
         {
-            char* option = strtok(mcq[i].options[user_answer[i] - 65], "\n");
-            printf("Your answer: \x1b[31m%s\x1b[0m (Incorrect)\n", option);
+            if (user_answer[i] == NULL)
+                printf("\x1b[31mNot Attempted\x1b[0m\n");
+            else
+            {
+                char* option = strtok(mcq[i].options[user_answer[i] - 65], "\n");
+                printf("Your answer: \x1b[31m%s\x1b[0m (Incorrect)\n", option);
+            }
             printf("Correct answer: \x1b[33m%s\x1b[0m", mcq[i].options[mcq[i].correct_option - 65]);
         }
         printf("\n");
@@ -191,7 +202,7 @@ int display_mcq(char* filename, char* mail, int** Level, int isOnline, int time_
 
     printf("Press any key to continue...\n");
     getch();
-    clear_screen();
+    clear_screen(&yCoord);
 
     if (!isOnline)
     {

@@ -7,7 +7,7 @@ void playgame_submenu(char** mail, int** level)
 {
     if (*mail == NULL)
     {
-        printf("You're not logged in.Please login/register first\n");
+        printf("\x1b[31mYou're not logged in.Please login/register first\x1b[0m\n");
         login_prompt(mail, level);
     }
 

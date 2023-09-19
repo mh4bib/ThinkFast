@@ -3,6 +3,7 @@
 #include<get_user_info.h>
 #include<main_menu.h>
 #include<clear_screen.h>
+extern yCoord;
 
 void registr(char** Email, int** Level) {
     int choice, i;
@@ -52,7 +53,7 @@ void registr(char** Email, int** Level) {
         // fflush(stdout);  // make sure the prompt is displayed before input is read
         if (scanf("%d", &choice) != 1)
         {
-            clear_screen();
+            clear_screen(&yCoord);
             printf("\x1b[31mInvalid choice. Please enter a number between 1 and 3\x1b[0m\n");
             // while (getchar() != '\n');  // clear input buffer
             // choice = -1;  // set invalid choice to continue loop
@@ -71,7 +72,7 @@ void registr(char** Email, int** Level) {
             level = 21;
             break;
         default:
-            clear_screen();
+            clear_screen(&yCoord);
             printf("\x1b[31mInvalid choice. Please enter a number between 1 and 3\x1b[0m\n");
             break;
         }
@@ -89,6 +90,6 @@ void registr(char** Email, int** Level) {
     fflush(fp);
     *Email = &mail;
     *Level = &level;
-    clear_screen();
+    clear_screen(&yCoord);
     main_menu();
 }
