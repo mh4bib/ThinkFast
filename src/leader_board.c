@@ -44,15 +44,17 @@ int leader_board() {
     sort(user, total_users);
 
     printCenter("+--------------------------------------+\n", &yCoord);
-    printCenter("|Rank        User Name      Score      |\n", &yCoord);
-    printCenter("+--------------------------------------+\n", &yCoord);
+    printCenter("|             Leader Board             |\n", &yCoord);
+    printCenter("+-----------+--------------+-----------|\n", &yCoord);
+    printCenter("|    Rank   |  User Name   |   Score   |\n", &yCoord);
+    printCenter("+-----------+--------------+-----------+\n", &yCoord);
     for (int i = 0; i < total_users; i++)
     {
         gotoxy(20, yCoord);
-        printf("|%-10d  %-13s  %-11d|\n", i + 1, user[i].name, user[i].highest_score);
+        printf("|%-10d |%-13s |%-11d|\n", i + 1, user[i].name, user[i].highest_score);
         yCoord++;
     }
-    printCenter("+--------------------------------------+\n", &yCoord);
+    printCenter("+-----------+--------------+-----------+\n", &yCoord);
 
     gotoxy(20, yCoord+2);
     printf("Press any key to continue...\n");
