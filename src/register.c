@@ -3,6 +3,9 @@
 #include<get_user_info.h>
 #include<main_menu.h>
 #include<clear_screen.h>
+#include<custom_print.h>
+#include<gotoxy.h>
+
 extern yCoord;
 
 void registr(char** Email, int** Level) {
@@ -20,7 +23,23 @@ void registr(char** Email, int** Level) {
     int total_users = user_info->total_user;
     struct USER* user = user_info->user;
 
-    printf("Enter email: ");
+    printCenter("+--------------------------------------+\n", &yCoord);
+    printCenter("|            PLEASE REGISTER           |\n", &yCoord);
+    printCenter("+--------------------------------------+\n", &yCoord);
+    printCenter("| Enter Email:                         |\n", &yCoord);
+    printCenter("+--------------------------------------+\n", &yCoord);
+    printCenter("| Enter Name:                          |\n", &yCoord);
+    printCenter("+--------------------------------------+\n", &yCoord);
+    printCenter("| Enter Password:                      |\n", &yCoord);
+    printCenter("+--------------------------------------+\n", &yCoord);
+    printCenter("| 1. Primary                           |\n", &yCoord);
+    printCenter("| 2. Secondary                         |\n", &yCoord);
+    printCenter("| 3. Higher Secondary                  |\n", &yCoord);
+    printCenter("| Select Level (1-3):                  |\n", &yCoord);
+    printCenter("+--------------------------------------+\n", &yCoord);
+
+    gotoxy(20 + 15, yCoord - 11);
+    // printf("Enter email: ");
     scanf("%s", &mail);
 
     for (i = 0; i < total_users; i++)
@@ -34,21 +53,26 @@ void registr(char** Email, int** Level) {
     }
 
     while (getchar() != '\n');
-    printf("Enter name: ");
+
+    gotoxy(20 + 14, yCoord - 9);
+    // printf("Enter name: ");
     fgets(name, sizeof(name), stdin);
-    printf("Enter password: ");
+
+    gotoxy(20 + 18, yCoord - 7);
+    // printf("Enter password: ");
     fgets(password, sizeof(password), stdin);
 
+    gotoxy(20 + 22, yCoord - 2);
     do
     {
         //printf("====================================\n");
-        printf("\nSelect Level\n");
+        // printf("\nSelect Level\n");
         //printf("====================================\n");
-        printf(" 1. Primary\n");
-        printf(" 2. Secondary\n");
-        printf(" 3. Higher Secondary\n\n");
+        // printf(" 1. Primary\n");
+        // printf(" 2. Secondary\n");
+        // printf(" 3. Higher Secondary\n\n");
         //printf("====================================\n");
-        printf(" Enter your choice (1-3): ");
+        // printf(" Enter your choice (1-3): ");
         //printf("====================================\n");
         // fflush(stdout);  // make sure the prompt is displayed before input is read
         if (scanf("%d", &choice) != 1)
