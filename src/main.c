@@ -7,21 +7,26 @@
 #include<login.h>
 #include<register.h>
 #include<update_level.h>
+#include<custom_print.h>
+#include<gotoxy.h>
+
 extern yCoord;
 
 int main()
 {
-  printf(" _________ __       _          __      ________            _    \n");
-  printf("|  _   _  [  |     (_)        [  |  _ |_   __  |          / |_  \n");
-  printf("|_/ | | \\_|| |--.  __  _ .--.  | | / ]  | |_ \\_,--.  .--.`| |-' \n");
-  printf("    | |    | .-. |[  |[ `.-. | | '' <   |  _| `'_\\ :( (`\\]| |   \n");
-  printf("   _| |_   | | | | | | | | | | | |`\\ \\ _| |_  // | |,`'.'.| |,  \n");
-  printf("  |_____| [___]|__[___[___||__[__|  \\_|_____| \\\'-;__[\\__) \\__/  \n");
+  printCenter("$$$$$$$$\\ $$\\       $$\\           $$\\             $$$$$$$$\\                   $$\\     \n", &yCoord);
+  printCenter("\\__$$  __|$$ |      \\__|          $$ |            $$  _____|                  $$ |    \n", &yCoord);
+  printCenter("   $$ |   $$$$$$$\\  $$\\ $$$$$$$\\  $$ |  $$\\       $$ |   $$$$$$\\   $$$$$$$\\ $$$$$$\\   \n", &yCoord);
+  printCenter("   $$ |   $$  __$$\\ $$ |$$  __$$\\ $$ | $$  |      $$$$$\\ \\____$$\\ $$  _____|\\_$$  _|  \n", &yCoord);
+  printCenter("   $$ |   $$ |  $$ |$$ |$$ |  $$ |$$$$$$  /       $$  __|$$$$$$$ |\\$$$$$$\\    $$ |    \n", &yCoord);
+  printCenter("   $$ |   $$ |  $$ |$$ |$$ |  $$ |$$  _$$<        $$ |  $$  __$$ | \\____$$\\   $$ |$$\\ \n", &yCoord);
+  printCenter("   $$ |   $$ |  $$ |$$ |$$ |  $$ |$$ | \\$$\\       $$ |  \\$$$$$$$ |$$$$$$$  |  \\$$$$  |\n", &yCoord);
+  printCenter("   \\__|   \\__|  \\__|\\__|\\__|  \\__|\\__|  \\__|      \\__|   \\_______|\\_______/    \\____/ \n", &yCoord);
 
-  printf("\n\nPress any key to continue...\n");
+  gotoxy(20, yCoord + 2);
+  printf("Press any key to continue...");
   getch();
   clear_screen(&yCoord);
   main_menu();
-
   return 0;
 }

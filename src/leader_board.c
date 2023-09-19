@@ -44,7 +44,7 @@ int leader_board() {
     sort(user, total_users);
 
     printCenter("+--------------------------------------+\n", &yCoord);
-    printCenter("|             Leader Board             |\n", &yCoord);
+    printCenter("|             LEADER BOARD             |\n", &yCoord);
     printCenter("+-----------+--------------+-----------|\n", &yCoord);
     printCenter("|    Rank   |  User Name   |   Score   |\n", &yCoord);
     printCenter("+-----------+--------------+-----------+\n", &yCoord);
@@ -57,8 +57,7 @@ int leader_board() {
     printCenter("+-----------+--------------+-----------+\n", &yCoord);
 
     gotoxy(20, yCoord+2);
-    printf("Press any key to continue...\n");
-    gotoxy(20+28, yCoord+2);
+    printf("Press any key to continue...");
     getch();
 
     clear_screen(&yCoord);

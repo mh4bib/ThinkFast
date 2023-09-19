@@ -8,6 +8,8 @@
 #include <update_level.h>
 #include <update_score.h>
 #include <clear_screen.h>
+#include <custom_print.h>
+#include <gotoxy.h>
 
 extern yCoord;
 
@@ -90,23 +92,37 @@ int display_mcq(char* filename, char* mail, int** Level, int isOnline, int time_
         int random_question = get_random_number(total_questions);
 
         // Progress Bar
+        gotoxy(2, 2);
         printf("%d/%d [", i + 1, total_questions);
         for (int k = 0; k < i + 1; k++)
             printf("# ");
         for (int k = i + 1; k < total_questions + 1; k++)
             printf(". ");
-        printf("]\t");
+        printf("]                       ");
 
-        printf("Remaining seconds: %.0f\n\n", time_limit - (get_current_time() - start_time));
+        printf("Remaining: %.0fs\n\n", time_limit - (get_current_time() - start_time));
 
         // Displaying question and options
+        printSemiCenter("+------------------------------------------------------------------+\n", &yCoord);
+        printSemiCenter("|                                                                  |", &yCoord);
+        printSemiCenter("|                                                                  |", &yCoord);
+        gotoxy(2+1, yCoord-1);
         printf("%s", mcq[random_question].text);
+        printSemiCenter("|                                                                  |", &yCoord);
+        printSemiCenter("+------------------------------------------------------------------+\n", &yCoord);
+        printSemiCenter("|                                                                  |", &yCoord);
+        printSemiCenter("|                                                                  |", &yCoord);
+        printSemiCenter("|                                                                  |", &yCoord);
+        printSemiCenter("|                                                                  |", &yCoord);
         for (int j = 0; j < 4; j++)
         {
+            gotoxy(2 + 1, yCoord - (4-j));
             printf("%s", mcq[random_question].options[j]);
         }
-
-
+        printSemiCenter("+------------------------------------------------------------------+\n", &yCoord);
+        printSemiCenter("|Enter your choice (A-D):                                          |", &yCoord);
+        printSemiCenter("+------------------------------------------------------------------+\n", &yCoord);
+        gotoxy(2 + 26, yCoord - 2);
         // Taking user's choice
         scanf("\n%c", &user_answer[random_question]);
 

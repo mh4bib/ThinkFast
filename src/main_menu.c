@@ -26,7 +26,7 @@ void main_menu()
     do
     {
         printCenter("+----------------------------------+\n",&yCoord);
-        printCenter("|               Home               |\n",&yCoord);
+        printCenter("|               HOME               |\n",&yCoord);
         printCenter("+----------------------------------+\n",&yCoord);
         printCenter("| 1. Play Game                     |\n",&yCoord);
         printCenter("| 2. Analytics                     |\n",&yCoord);
@@ -41,7 +41,8 @@ void main_menu()
         if (scanf("%d", &choice) != 1)
         {
             clear_screen(&yCoord);
-            printf("\x1b[31mInvalid choice. Please enter a number between 1 and 4.\x1b[0m\n");
+            gotoxy(20, 2);
+            printf("\x1b[31mInvalid choice\x1b[0m\n");
             // while (getchar() != '\n');  // clear input buffer
             // choice = -1;  // set invalid choice to continue loop
             fflush(stdin);
@@ -72,7 +73,8 @@ void main_menu()
             break;
         default:
             clear_screen(&yCoord);
-            printf("\x1b[31mInvalid choice. Please enter a number between 1 and 4\x1b[0m\n");
+            gotoxy(20, 2);
+            printf("\x1b[31mInvalid choice\x1b[0m\n");
             break;
         }
     } while (choice < 1 || choice > 4);
