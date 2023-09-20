@@ -27,8 +27,8 @@ void login_prompt(char** email, int** level)
         if (scanf("%d", &choice) != 1)
         {
             clear_screen(&yCoord);
-            gotoxy(12, 2);
-            printf("\x1b[31mInvalid choice. Please enter a number between 1 and 4.\x1b[0m\n");
+            gotoxy(20, 2);
+            printf(HRED"Invalid choice"RESET);
             while (getchar() != '\n');
             // choice = -1;  // set invalid choice to continue loop
             // fflush(stdin);
@@ -49,8 +49,8 @@ void login_prompt(char** email, int** level)
             main_menu();
         default:
             clear_screen(&yCoord);
-            gotoxy(12, 2);
-            printf("\x1b[31mInvalid choice. Please enter a number between 1 and 4\x1b[0m\n");
+            gotoxy(20, 2);
+            printf(HRED"Invalid choice"RESET);
             break;
         }
 

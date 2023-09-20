@@ -5,6 +5,7 @@
 #include<clear_screen.h>
 #include<custom_print.h>
 #include<gotoxy.h>
+#include<ansi_color_codes.h>
 
 extern yCoord;
 
@@ -78,7 +79,8 @@ void registr(char** Email, int** Level) {
         if (scanf("%d", &choice) != 1)
         {
             clear_screen(&yCoord);
-            printf("\x1b[31mInvalid choice. Please enter a number between 1 and 3\x1b[0m\n");
+            gotoxy(20, 2);
+            printf(HRED"Invalid choice" RESET);
             // while (getchar() != '\n');  // clear input buffer
             // choice = -1;  // set invalid choice to continue loop
             fflush(stdin);
@@ -97,7 +99,8 @@ void registr(char** Email, int** Level) {
             break;
         default:
             clear_screen(&yCoord);
-            printf("\x1b[31mInvalid choice. Please enter a number between 1 and 3\x1b[0m\n");
+            gotoxy(20, 2);
+            printf(HRED"Invalid choice"RESET);
             break;
         }
     } while (choice < 1 || choice > 3);

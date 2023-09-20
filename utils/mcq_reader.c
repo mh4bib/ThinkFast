@@ -63,6 +63,20 @@ struct MCQ_QUESTIONS* read_mcq(char* filename)
 // store mcq and display one by one
 int display_mcq(char* filename, char* mail, int** Level, int isOnline, int time_limit)
 {
+
+    printCenter("+--------------------------------------+\n", &yCoord);
+    printCenter("|                                      |\n", &yCoord);
+    printCenter("|                                      |\n", &yCoord);
+    gotoxy(20+5, yCoord-1);
+    printf("You have %ds to finish the quiz", time_limit);
+    printCenter("|       Time starts on key press       |\n", &yCoord);
+    printCenter("|                                      |\n", &yCoord);
+    printCenter("+--------------------------------------+\n", &yCoord);
+    gotoxy(20, yCoord + 2);
+    printf(HBLK"Press any key to start..."RESET);
+    getch();
+    clear_screen(&yCoord);
+
     char buffer[1024];
     double start_time = get_current_time();
 
@@ -99,7 +113,7 @@ int display_mcq(char* filename, char* mail, int** Level, int isOnline, int time_
             printf("# ");
         for (int k = i + 1; k < total_questions + 1; k++)
             printf(". ");
-        printf("]                       ");
+        printf("]                        ");
 
         printf("Remaining: %.0fs\n\n", time_limit - (get_current_time() - start_time));
 
@@ -131,11 +145,17 @@ int display_mcq(char* filename, char* mail, int** Level, int isOnline, int time_
         if ((get_current_time() - start_time) > time_limit)
         {
             clear_screen(&yCoord);
-            printf("Your time's up!\n");
+            printCenter("+--------------------------------------+\n", &yCoord);
+            printCenter("|                                      |\n", &yCoord);
+            printCenter("|              "HRED"Time's up!"RESET"              |\n", &yCoord);
+            printCenter("|                                      |\n", &yCoord);
+            printCenter("+--------------------------------------+\n", &yCoord);
             if (!isOnline)
             {
+                gotoxy(20, yCoord + 2);
                 printf(HBLK"Press any key to continue..."RESET);
                 getch();
+                clear_screen(&yCoord);
                 break;
             }
             else
@@ -148,37 +168,44 @@ int display_mcq(char* filename, char* mail, int** Level, int isOnline, int time_
                     closesocket(client_socket);
                     return 1;
                 }
+                gotoxy(20, yCoord + 2);
                 printf(HBLK"Press any key to continue..."RESET);
                 getch();
+                clear_screen(&yCoord);
                 break;
             }
         }
 
         user_answer[random_question] = toupper(user_answer[random_question]);
 
-        if (!isOnline)
+        if (user_answer[random_question] == 'A' || user_answer[random_question] == 'B' || user_answer[random_question] == 'C' || user_answer[random_question] == 'D')
         {
-            // updating score
-            if (user_answer[random_question] == mcq[random_question].correct_option)
-                score++;
+            if (!isOnline)
+            {
+                // updating score
+                if (user_answer[random_question] == mcq[random_question].correct_option)
+                    score++;
+            }
+            else
+            {
+                // updating score
+                if (user_answer[random_question] == mcq[random_question].correct_option)
+                    score++;
+
+                // Send updated score to the server
+                sprintf(buffer, "%d", score);
+                if (send(client_socket, buffer, strlen(buffer), 0) == SOCKET_ERROR)
+                {
+                    perror("uScore sending failed");
+                    closesocket(client_socket);
+                    return 1;
+                }
+            }
         }
         else
         {
-            // updating score
-            if (user_answer[random_question] == mcq[random_question].correct_option)
-                score++;
-
-            // Send updated score to the server
-            sprintf(buffer, "%d", score);
-            if (send(client_socket, buffer, strlen(buffer), 0) == SOCKET_ERROR)
-            {
-                perror("uScore sending failed");
-                closesocket(client_socket);
-                return 1;
-            }
+            user_answer[random_question] = NULL;
         }
-
-
 
         //Sleep(300);
         clear_screen(&yCoord);
@@ -189,7 +216,7 @@ int display_mcq(char* filename, char* mail, int** Level, int isOnline, int time_
     printSemiCenter("|                                                                  |", &yCoord);
     printSemiCenter("|                                                                  |", &yCoord);
     gotoxy(2 + 22, yCoord - 1);
-    printf("You scored %-2d out of %-2d\n", score, total_questions);
+    printf("YOU SCORED %-2d OUT OF %-2d\n", score, total_questions);
     printSemiCenter("|                                                                  |", &yCoord);
     printSemiCenter("+------------------------------------------------------------------+", &yCoord);
     for (int i = 0; i < total_questions; i++)
@@ -213,7 +240,7 @@ int display_mcq(char* filename, char* mail, int** Level, int isOnline, int time_
             {
                 printSemiCenter("|                                                                  |", &yCoord);
                 gotoxy(2 + 1, yCoord - 1);
-                printf("\x1b[31mNot Attempted\x1b[0m");
+                printf(HRED "Not Attempted" RESET);
             }
             else
             {
