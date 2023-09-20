@@ -25,7 +25,7 @@ void registr(char** Email, int** Level) {
     struct USER* user = user_info->user;
 
     printCenter("+--------------------------------------+\n", &yCoord);
-    printCenter("|            PLEASE REGISTER           |\n", &yCoord);
+    printCenter("|            "UWHT"PLEASE REGISTER"RESET"           |\n", &yCoord);
     printCenter("+--------------------------------------+\n", &yCoord);
     printCenter("| Enter Email:                         |\n", &yCoord);
     printCenter("+--------------------------------------+\n", &yCoord);
@@ -56,11 +56,9 @@ void registr(char** Email, int** Level) {
     while (getchar() != '\n');
 
     gotoxy(20 + 14, yCoord - 9);
-    // printf("Enter name: ");
     fgets(name, sizeof(name), stdin);
 
     gotoxy(20 + 18, yCoord - 7);
-    // printf("Enter password: ");
     fgets(password, sizeof(password), stdin);
 
     gotoxy(20 + 22, yCoord - 2);

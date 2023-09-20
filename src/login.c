@@ -53,7 +53,16 @@ int login(char** Email, int** Level) {
   }
 
   gotoxy(20 + 18, yCoord - 2);
-  scanf("%s", &pass);
+  char ch;
+  int j=0;
+  while ((ch = _getch()) != 13) //character 13 is enter
+  {
+    pass[j] = ch;
+    j++;
+    printf("*");
+  }
+  pass[j] = '\0';
+  // scanf("%s", &pass);
   // char* password = strtok(user[i].password, "\n");
   if (strcmp(user[i].password, pass) != 0)
   {
