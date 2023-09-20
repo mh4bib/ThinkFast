@@ -33,3 +33,8 @@ shaju
 nopass
 5
 1
+asdf
+asdf
+asdf
+0
+1
