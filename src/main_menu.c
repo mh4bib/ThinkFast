@@ -7,6 +7,7 @@
 #include <leader_board.h>
 #include<get_user_info.h>
 #include<gotoxy.h>
+#include<ansi_color_codes.h>
 
 char* Email = NULL;
 int Level = NULL;
@@ -26,7 +27,7 @@ void main_menu()
     do
     {
         printCenter("+----------------------------------+\n",&yCoord);
-        printCenter("|               HOME               |\n",&yCoord);
+        printCenter("|               "UWHT"HOME"RESET"               |\n", &yCoord);
         printCenter("+----------------------------------+\n",&yCoord);
         printCenter("| 1. Play Game                     |\n",&yCoord);
         printCenter("| 2. Analytics                     |\n",&yCoord);
@@ -42,7 +43,7 @@ void main_menu()
         {
             clear_screen(&yCoord);
             gotoxy(20, 2);
-            printf("\x1b[31mInvalid choice\x1b[0m\n");
+            printf(BRED"Invalid choice"RESET);
             // while (getchar() != '\n');  // clear input buffer
             // choice = -1;  // set invalid choice to continue loop
             fflush(stdin);
@@ -74,7 +75,7 @@ void main_menu()
         default:
             clear_screen(&yCoord);
             gotoxy(20, 2);
-            printf("\x1b[31mInvalid choice\x1b[0m\n");
+            printf(BRED"Invalid choice"RESET);
             break;
         }
     } while (choice < 1 || choice > 4);

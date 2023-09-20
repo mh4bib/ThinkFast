@@ -4,6 +4,7 @@
 #include<clear_screen.h>
 #include<custom_print.h>
 #include<gotoxy.h>
+#include<ansi_color_codes.h>
 
 extern yCoord;
 
@@ -44,7 +45,7 @@ int leader_board() {
     sort(user, total_users);
 
     printCenter("+--------------------------------------+\n", &yCoord);
-    printCenter("|             LEADER BOARD             |\n", &yCoord);
+    printCenter("|             "UWHT"LEADER BOARD"RESET"             |\n", &yCoord);
     printCenter("+-----------+--------------+-----------|\n", &yCoord);
     printCenter("|    Rank   |  User Name   |   Score   |\n", &yCoord);
     printCenter("+-----------+--------------+-----------+\n", &yCoord);
@@ -57,7 +58,7 @@ int leader_board() {
     printCenter("+-----------+--------------+-----------+\n", &yCoord);
 
     gotoxy(20, yCoord+2);
-    printf("Press any key to continue...");
+    printf(HBLK"Press any key to continue..."RESET);
     getch();
 
     clear_screen(&yCoord);

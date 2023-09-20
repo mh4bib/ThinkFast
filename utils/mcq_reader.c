@@ -10,6 +10,7 @@
 #include <clear_screen.h>
 #include <custom_print.h>
 #include <gotoxy.h>
+#include <ansi_color_codes.h>
 
 extern yCoord;
 
@@ -103,10 +104,10 @@ int display_mcq(char* filename, char* mail, int** Level, int isOnline, int time_
         printf("Remaining: %.0fs\n\n", time_limit - (get_current_time() - start_time));
 
         // Displaying question and options
-        printSemiCenter("+------------------------------------------------------------------+\n", &yCoord);
+        printSemiCenter("+------------------------------------------------------------------+", &yCoord);
         printSemiCenter("|                                                                  |", &yCoord);
         printSemiCenter("|                                                                  |", &yCoord);
-        gotoxy(2+1, yCoord-1);
+        gotoxy(2 + 1, yCoord - 1);
         printf("%s", mcq[random_question].text);
         printSemiCenter("|                                                                  |", &yCoord);
         printSemiCenter("+------------------------------------------------------------------+\n", &yCoord);
@@ -116,12 +117,12 @@ int display_mcq(char* filename, char* mail, int** Level, int isOnline, int time_
         printSemiCenter("|                                                                  |", &yCoord);
         for (int j = 0; j < 4; j++)
         {
-            gotoxy(2 + 1, yCoord - (4-j));
+            gotoxy(2 + 1, yCoord - (4 - j));
             printf("%s", mcq[random_question].options[j]);
         }
-        printSemiCenter("+------------------------------------------------------------------+\n", &yCoord);
+        printSemiCenter("+------------------------------------------------------------------+", &yCoord);
         printSemiCenter("|Enter your choice (A-D):                                          |", &yCoord);
-        printSemiCenter("+------------------------------------------------------------------+\n", &yCoord);
+        printSemiCenter("+------------------------------------------------------------------+", &yCoord);
         gotoxy(2 + 26, yCoord - 2);
         // Taking user's choice
         scanf("\n%c", &user_answer[random_question]);
@@ -133,7 +134,7 @@ int display_mcq(char* filename, char* mail, int** Level, int isOnline, int time_
             printf("Your time's up!\n");
             if (!isOnline)
             {
-                printf("Press any key to continue...\n");
+                printf(HBLK"Press any key to continue..."RESET);
                 getch();
                 break;
             }
@@ -147,7 +148,7 @@ int display_mcq(char* filename, char* mail, int** Level, int isOnline, int time_
                     closesocket(client_socket);
                     return 1;
                 }
-                printf("Press any key to continue...\n");
+                printf(HBLK"Press any key to continue..."RESET);
                 getch();
                 break;
             }
@@ -184,39 +185,63 @@ int display_mcq(char* filename, char* mail, int** Level, int isOnline, int time_
     }
 
     // displaying answer sheet
-    printf("                              +------------+\n");
-    printf("                              |   RESULT   |\n");
-    printf("                       +------+------------+-------+\n");
-    printf("                       |  You scored %-2d out of %-2d  |\n", score, total_questions);
-    printf("                       +---------------------------+\n\n");
+    printSemiCenter("+------------------------------------------------------------------+", &yCoord);
+    printSemiCenter("|                                                                  |", &yCoord);
+    printSemiCenter("|                                                                  |", &yCoord);
+    gotoxy(2 + 22, yCoord - 1);
+    printf("You scored %-2d out of %-2d\n", score, total_questions);
+    printSemiCenter("|                                                                  |", &yCoord);
+    printSemiCenter("+------------------------------------------------------------------+", &yCoord);
     for (int i = 0; i < total_questions; i++)
     {
+
+        printSemiCenter("|                                                                  |", &yCoord);
+        printSemiCenter("|                                                                  |", &yCoord);
+        // printSemiCenter("+------------------------------------------------------------------+", &yCoord);
+        gotoxy(2 + 1, yCoord - 2);
         printf("Q%d. %s", i + 1, mcq[i].text);
         if (mcq[i].correct_option == user_answer[i])
         {
+            printSemiCenter("|                                                                  |", &yCoord);
+            gotoxy(2 + 1, yCoord - 1);
             char* option = strtok(mcq[i].options[user_answer[i] - 65], "\n");
-            printf("Your answer: \x1b[32m%s\x1b[0m (Correct)\n", option);
+            printf("Your answer:" HGRN"%s"RESET" (Correct)", option);
         }
         else
         {
             if (user_answer[i] == NULL)
-                printf("\x1b[31mNot Attempted\x1b[0m\n");
+            {
+                printSemiCenter("|                                                                  |", &yCoord);
+                gotoxy(2 + 1, yCoord - 1);
+                printf("\x1b[31mNot Attempted\x1b[0m");
+            }
             else
             {
+                printSemiCenter("|                                                                  |", &yCoord);
+                gotoxy(2 + 1, yCoord - 1);
                 char* option = strtok(mcq[i].options[user_answer[i] - 65], "\n");
-                printf("Your answer: \x1b[31m%s\x1b[0m (Incorrect)\n", option);
+                printf("Your answer:" HRED "%s" RESET "(Incorrect)", option);
             }
-            printf("Correct answer: \x1b[33m%s\x1b[0m", mcq[i].options[mcq[i].correct_option - 65]);
+            printSemiCenter("|                                                                  |", &yCoord);
+            gotoxy(2 + 1, yCoord - 1);
+            printf("Correct answer:" HCYN "%s" RESET, mcq[i].options[mcq[i].correct_option - 65]);
+
         }
-        printf("\n");
+        printSemiCenter("+------------------------------------------------------------------+", &yCoord);
     }
 
     if (score > 6)
         update_level(mail, Level);
     else
-        printf("\x1b[91mYou have to play this round again as you scored less than 7\x1b[0m\n");
+    {
+        printSemiCenter("|                                                                  |", &yCoord);
+        gotoxy(2 + 1, yCoord - 1);
+        printf(HYEL "You have to play this round again as your score < 7" RESET);
+        printSemiCenter("+------------------------------------------------------------------+", &yCoord);
+    }
 
-    printf("Press any key to continue...\n");
+    gotoxy(2, yCoord + 2);
+    printf(HBLK"Press any key to continue..."RESET);
     getch();
     clear_screen(&yCoord);
 

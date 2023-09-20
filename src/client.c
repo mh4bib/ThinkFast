@@ -4,6 +4,7 @@
 #include <winsock2.h>
 #include <mcq_reader.h>
 #include <leader_board.h>
+#include <ansi_color_codes.h>
 
 #define SERVER_IP "127.0.0.1"
 #define PORT 12345
@@ -117,7 +118,7 @@ int client(char** mail, int** level)
     closesocket(client_socket);
     WSACleanup();
 
-    printf("Press any key to continue...\n");
+    printf(HBLK"Press any key to continue..."RESET);
     getch();
     clear_screen(&yCoord);
     leader_board();

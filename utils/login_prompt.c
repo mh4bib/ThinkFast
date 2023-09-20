@@ -5,6 +5,7 @@
 #include<main_menu.h>
 #include<custom_print.h>
 #include<gotoxy.h>
+#include<ansi_color_codes.h>
 extern yCoord;
 
 void login_prompt(char** email, int** level)
@@ -13,7 +14,7 @@ void login_prompt(char** email, int** level)
     do
     {
         printCenter("+----------------------------------+\n", &yCoord);
-        printCenter("|            Select One            |\n", &yCoord);
+        printCenter("|            "UWHT"SELECT ONE"RESET"            |\n", &yCoord);
         printCenter("+----------------------------------+\n", &yCoord);
         printCenter("| 1. Login                         |\n", &yCoord);
         printCenter("| 2. Register                      |\n", &yCoord);

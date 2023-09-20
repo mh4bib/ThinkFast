@@ -3,6 +3,7 @@
 #include<login_prompt.h>
 #include<custom_print.h>
 #include<gotoxy.h>
+#include<ansi_color_codes.h>
 
 extern yCoord;
 
@@ -19,7 +20,7 @@ int login(char** Email, int** Level) {
   struct USER* user = user_info->user;
 
   printCenter("+--------------------------------------+\n", &yCoord);
-  printCenter("|             PLEASE LOGIN             |\n", &yCoord);
+  printCenter("|             "UWHT"PLEASE LOGIN"RESET"             |\n", &yCoord);
   printCenter("+--------------------------------------+\n", &yCoord);
   printCenter("| Enter Email:                         |\n", &yCoord);
   printCenter("+--------------------------------------+\n", &yCoord);
@@ -42,9 +43,9 @@ int login(char** Email, int** Level) {
   if (!is_valid)
   {
     gotoxy(20, 2);
-    printf("\x1b[31mYou are not registered!\x1b[0m");
+    printf(BRED"You are not registered!"RESET);
     gotoxy(20, yCoord + 1);
-    printf("Press any key to proceed...");
+    printf(HBLK"Press any key to continue..."RESET);
     getch();
     clear_screen(&yCoord);
     login_prompt(Email, Level);
@@ -57,9 +58,9 @@ int login(char** Email, int** Level) {
   if (strcmp(user[i].password, pass) != 0)
   {
     gotoxy(20, 2);
-    printf("\x1b[31mIncorrect password\x1b[0m");
+    printf(BRED"Incorrect password\x1b[0m"RESET);
     gotoxy(20, yCoord+1);
-    printf("Press any key to proceed...");
+    printf(HBLK"Press any key to continue..."RESET);
     getch();
     clear_screen(&yCoord);
     login_prompt(Email, Level);

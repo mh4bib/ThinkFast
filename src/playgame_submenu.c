@@ -2,6 +2,7 @@
 #include <clear_screen.h>
 #include <main_menu.h>
 #include <mcq_reader.h>
+#include <ansi_color_codes.h>
 
 extern yCoord;
 
@@ -11,7 +12,7 @@ void playgame_submenu(char** mail, int** level)
     {
         // clear_screen(&yCoord);
         gotoxy(20, 2);
-        printf("\x1b[31mLogin first to play...\x1b[0m\n");
+        printf(BRED"Login first to play..."RESET);
         login_prompt(mail, level);
     }
 
