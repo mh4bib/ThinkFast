@@ -259,20 +259,23 @@ int display_mcq(char* filename, char* mail, int** Level, int isOnline, int time_
         printSemiCenter("+------------------------------------------------------------------+", &yCoord);
     }
 
-    if (score > 6)
+    if(!isOnline)
     {
-        update_level(mail, Level);
-        printSemiCenter("|                                                                  |", &yCoord);
-        gotoxy(2 + 1, yCoord - 1);
-        printf(HMAG "Congratulations! you are promoted to level %d" RESET, **Level);
-        printSemiCenter("+------------------------------------------------------------------+", &yCoord);
-    }
-    else
-    {
-        printSemiCenter("|                                                                  |", &yCoord);
-        gotoxy(2 + 1, yCoord - 1);
-        printf(HYEL "You have to play this round again as your score < 7" RESET);
-        printSemiCenter("+------------------------------------------------------------------+", &yCoord);
+        if (score > 6)
+        {
+            update_level(mail, Level);
+            printSemiCenter("|                                                                  |", &yCoord);
+            gotoxy(2 + 1, yCoord - 1);
+            printf(HMAG "Congratulations! you are promoted to level %d" RESET, **Level);
+            printSemiCenter("+------------------------------------------------------------------+", &yCoord);
+        }
+        else
+        {
+            printSemiCenter("|                                                                  |", &yCoord);
+            gotoxy(2 + 1, yCoord - 1);
+            printf(HYEL "You have to play this round again as your score < 7" RESET);
+            printSemiCenter("+------------------------------------------------------------------+", &yCoord);
+        }
     }
 
     gotoxy(2, yCoord + 2);
