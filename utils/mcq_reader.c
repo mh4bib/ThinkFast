@@ -67,9 +67,9 @@ int display_mcq(char* filename, char* mail, int** Level, int isOnline, int time_
     printCenter("+--------------------------------------+\n", &yCoord);
     printCenter("|                                      |\n", &yCoord);
     printCenter("|                                      |\n", &yCoord);
-    gotoxy(20+5, yCoord-1);
+    gotoxy(20 + 5, yCoord - 1);
     printf("You have %ds to finish the quiz", time_limit);
-    if(!isOnline)
+    if (!isOnline)
         printCenter("|       Time starts on key press       |\n", &yCoord);
     else
         printCenter("|   Hurry up! Session already started  |\n", &yCoord);
@@ -227,7 +227,6 @@ int display_mcq(char* filename, char* mail, int** Level, int isOnline, int time_
 
         printSemiCenter("|                                                                  |", &yCoord);
         printSemiCenter("|                                                                  |", &yCoord);
-        // printSemiCenter("+------------------------------------------------------------------+", &yCoord);
         gotoxy(2 + 1, yCoord - 2);
         printf("Q%d. %s", i + 1, mcq[i].text);
         if (mcq[i].correct_option == user_answer[i])
@@ -261,7 +260,13 @@ int display_mcq(char* filename, char* mail, int** Level, int isOnline, int time_
     }
 
     if (score > 6)
+    {
         update_level(mail, Level);
+        printSemiCenter("|                                                                  |", &yCoord);
+        gotoxy(2 + 1, yCoord - 1);
+        printf(HMAG "Congratulations! you are promoted to level %d" RESET, **Level);
+        printSemiCenter("+------------------------------------------------------------------+", &yCoord);
+    }
     else
     {
         printSemiCenter("|                                                                  |", &yCoord);
