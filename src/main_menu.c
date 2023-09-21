@@ -31,7 +31,10 @@ void main_menu()
         printCenter("+----------------------------------+\n",&yCoord);
         printCenter("| 1. Play Game                     |\n",&yCoord);
         printCenter("| 2. Analytics                     |\n",&yCoord);
-        printCenter("| 3. Login/Register                |\n",&yCoord);
+        if(Email==NULL)
+            printCenter("| 3. Login/Register                |\n",&yCoord);
+        else
+            printCenter("| 3. Logout                        |\n",&yCoord);
         printCenter("| 4. Attend Online                 |\n",&yCoord);
         printCenter("| 5. Exit                          |\n",&yCoord);
         printCenter("+----------------------------------+\n",&yCoord);
@@ -60,9 +63,20 @@ void main_menu()
             leader_board();
             break;
         case 3:
+        if(Email==NULL)
+        {
             clear_screen(&yCoord);
             login_prompt(&Email, &Level);
             break;
+        }
+        else
+        {
+            Email=NULL;
+            Level=NULL;
+            clear_screen(&yCoord);
+            main_menu();
+            break;
+        }
         case 4:
             clear_screen(&yCoord);
             // test(&Email, &Level);
