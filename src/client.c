@@ -16,6 +16,15 @@ extern yCoord;
 
 int client(char** mail, int** level)
 {
+
+    if (*mail == NULL)
+    {
+        // clear_screen(&yCoord);
+        gotoxy(20, 2);
+        printf(BRED"Login first to attend online.."RESET);
+        login_prompt(mail, level);
+    }
+
     WSADATA wsa;
     struct sockaddr_in server_addr;
     char buffer[MAX_BUFFER_SIZE];
@@ -43,8 +52,20 @@ int client(char** mail, int** level)
     // Connect to the server
     if (connect(client_socket, (struct sockaddr*)&server_addr, sizeof(server_addr)) == SOCKET_ERROR)
     {
-        perror("Connection failed");
-        return 1;
+        printCenter("+--------------------------------------+\n", &yCoord);
+        printCenter("|                                      |\n", &yCoord);
+        printCenter("|           "HRED"Connection Failed"RESET"          |\n", &yCoord);
+        printCenter("|         "HYEL"Server isn't ready yet!"RESET"      |\n", &yCoord);
+        printCenter("|                                      |\n", &yCoord);
+        printCenter("+--------------------------------------+\n", &yCoord);
+
+        gotoxy(20, yCoord + 2);
+        printf(HBLK"Press any key to continue..."RESET);
+        getch();
+        clear_screen(&yCoord);
+        main_menu();
+        // perror("Connection failed");
+        // return 1;
     }
 
     // Send an email to the server
