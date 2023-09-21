@@ -48,8 +48,13 @@ void registr(char** Email, int** Level) {
         // char* email = strtok(user[i].email, "\n");
         if (strcmp(user[i].email, mail) == 0)
         {
-            printf("You are already registered! Please login");
-            return 1;
+            gotoxy(20, 2);
+            printf(HRED"Email is already registered.." RESET);
+            gotoxy(20, yCoord + 1);
+            printf(HBLK"Press any key to continue..."RESET);
+            getch();
+            clear_screen(&yCoord);
+            login_prompt(Email, Level);
         }
     }
 
