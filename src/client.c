@@ -97,11 +97,11 @@ int client(char** mail, int** level)
     }
     time_limit_buffer[bytes_received] = '\0';
     int time_limit = atoi(time_limit_buffer);
-    printf("Time Limit Received: %d\n", time_limit);
+    // printf("Time Limit Received: %d\n", time_limit);
 
     //Show quiz here
     int score = display_mcq(buffer, *mail, level, 1, time_limit);
-    printf("You scored:%d\n", score);
+    // printf("You scored:%d\n", score);
 
     // Send the total score to the server
     sprintf(buffer, "%d", score);
@@ -139,6 +139,15 @@ int client(char** mail, int** level)
     closesocket(client_socket);
     WSACleanup();
 
+    printCenter("+--------------------------------------+\n", &yCoord);
+    printCenter("|                                      |\n", &yCoord);
+    printCenter("|                                      |\n", &yCoord);
+    gotoxy(20 + 3, yCoord - 1);
+    printf("You earned %d points in this session", score);
+    printCenter("|      Let's see the leader board      |\n", &yCoord);
+    printCenter("|                                      |\n", &yCoord);
+    printCenter("+--------------------------------------+\n", &yCoord);
+    gotoxy(20, yCoord + 2);
     printf(HBLK"Press any key to continue..."RESET);
     getch();
     clear_screen(&yCoord);

@@ -69,7 +69,10 @@ int display_mcq(char* filename, char* mail, int** Level, int isOnline, int time_
     printCenter("|                                      |\n", &yCoord);
     gotoxy(20+5, yCoord-1);
     printf("You have %ds to finish the quiz", time_limit);
-    printCenter("|       Time starts on key press       |\n", &yCoord);
+    if(!isOnline)
+        printCenter("|       Time starts on key press       |\n", &yCoord);
+    else
+        printCenter("|   Hurry up! Session already started  |\n", &yCoord);
     printCenter("|                                      |\n", &yCoord);
     printCenter("+--------------------------------------+\n", &yCoord);
     gotoxy(20, yCoord + 2);
