@@ -40,7 +40,7 @@ https://github.com/mahiuddinhabib/ThinkFast/assets/88333731/0cd7528d-590f-445e-b
 
 
 
-# Future Possibilities
+### Future Possibilities
 - Database: Integrating a real database instead of a file system
 - GUI: Integrating graphical user interface
 - Remote Server: Hosting the backend to a remote server
