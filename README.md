@@ -17,7 +17,7 @@ This project focuses mainly on developing a quiz game using C programming. It en
 - Random quizzes: Displaying random quizzes to the users.
 - Dynamic Difficulty: A dynamic difficulty setting based on performance.
 - Different levels: Academic levels like primary, secondary, and higher secondary.
-- Multiplayer mode: Created a server and   implemented the multiplayer mode.
+- Multiplayer mode: Created a [server](https://github.com/mahiuddinhabib/ThinkFast-Server) and   implemented the multiplayer mode.
 - Leaderboard: Integrated a leaderboard to provide competition and etc.
 
 ### System Requirements
